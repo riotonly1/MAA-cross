@@ -51,11 +51,15 @@ MaaFramework 地址：https://github.com/MaaXYZ/MaaFramework
 
 3.相关json的编写请打开***\assets\resource\pipeline下的json进行编写
 
+MaaDebugger加载失败，请检查json是否存在编写错误，打开的Git Bash窗口也会提示内容
+
 4.相关照片请存放于***\assets\resource\image文件夹内
 
 5.推荐使用MFATools进行截图，区域选择，坐标查看，滑动坐标的选择和查看
 
-MaaDebugger本地使用代码
+6.MaaDebugger本地使用代码
+
+请使用Git Bash窗口运行如下命令
 
 python -m MaaDebugger
 
