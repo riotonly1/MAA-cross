@@ -63,7 +63,7 @@ MaaDebugger加载失败，请检查json是否存在编写错误，打开的Git B
 
 python -m MaaDebugger
 
-摸鱼进度：（均存在各种各样的神奇问题和bug）
+**摸鱼进度：（均存在各种各样的神奇问题和bug）**
 
 1.启动游戏并登录至主界面
 
