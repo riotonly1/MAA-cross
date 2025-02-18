@@ -9,7 +9,7 @@
 
 </div>
 
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，正在尝试构建 自用的交错战线收菜助手。
 
 > **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
 > 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
@@ -62,6 +62,13 @@ MaaDebugger加载失败，请检查json是否存在编写错误，打开的Git B
 请使用Git Bash窗口运行如下命令
 
 python -m MaaDebugger
+
+摸鱼进度：（均存在各种各样的神奇问题和bug）
+
+1.启动游戏并登录至主界面
+
+2.基建收菜（矿场收菜、驻员更换、交易所蓝图订单）
+    
 
 ## 鸣谢
 
