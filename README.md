@@ -43,19 +43,21 @@ Your Nam 和 email@***.com 设置为你的用户名和邮箱
 
 下面相关内容均在打开的界面进行输入（若首次本地安装MaaDebugger 地址：https://github.com/MaaXYZ/MaaDebugger 失败，可多尝试几次）
 
-相关内容请前往 MaaFramework 地址：https://github.com/MaaXYZ/MaaFramework 及 MaaFramework项目模板 地址：https://github.com/MaaXYZ/MaaPracticeBoilerplate 查看
+相关内容请前往 
+
+MaaFramework 地址：https://github.com/MaaXYZ/MaaFramework 
+
+和MaaFramework项目模板 地址：https://github.com/MaaXYZ/MaaPracticeBoilerplate 查看
+
+3.相关json的编写请打开***\assets\resource\pipeline下的json进行编写
+
+4.相关照片请存放于***\assets\resource\image文件夹内
+
+5.推荐使用MFATools进行截图，区域选择，坐标查看，滑动坐标的选择和查看
 
 MaaDebugger本地使用代码
 
 python -m MaaDebugger
-
-3.相关json的编写请打开***\assets\resource\pipeline下的json进行编写
-
-4.相关照片请存放🌧于***\assets\resource\image文件夹内
-
-5.推荐使用MFATools进行截图，区域选择，坐标查看，滑动坐标的选择和查看
-
-
 
 ## 鸣谢
 
