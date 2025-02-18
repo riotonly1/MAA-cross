@@ -22,11 +22,11 @@
 ## 补充部分教程-需求的软件及下载链接
 1.请先行下载并安装如下软件
 
--VSCode（用来打开并编写json，官网链接（https://code.visualstudio.com/Download））
+-VSCode 用来打开并编写json，官网链接：https://code.visualstudio.com/Download
 
--python（基础支持，官网链接：（https://www.python.org/downloads/））
+-python 基础支持，官网链接：https://www.python.org/downloads/
 
--Git Bash（命令行工具，官网链接（https://git-scm.com/downloads/win））
+-Git Bash 命令行工具，官网链接：https://git-scm.com/downloads/win
 
 ## 如何开发
 补充：
