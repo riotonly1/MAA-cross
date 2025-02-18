@@ -41,9 +41,9 @@ Your Nam 和 email@***.com 设置为你的用户名和邮箱
    
 2.在你愿意存放项目的地址，新建一个文件夹，然后有右键点击，并选择Open Git Bash here
 
-下面相关内容均在打开的界面进行输入（若首次本地安装[MaaDebugger](https://github.com/MaaXYZ/MaaDebugger)失败，可多尝试几次）
+下面相关内容均在打开的界面进行输入（若首次本地安装MaaDebugger 地址：https://github.com/MaaXYZ/MaaDebugger 失败，可多尝试几次）
 
-相关内容请前往 MaaFramework(https://github.com/MaaXYZ/MaaFramework)及 MaaFramework项目模板(https://github.com/MaaXYZ/MaaPracticeBoilerplate）查看
+相关内容请前往 MaaFramework 地址：https://github.com/MaaXYZ/MaaFramework 及 MaaFramework项目模板 地址：https://github.com/MaaXYZ/MaaPracticeBoilerplate 查看
 
 MaaDebugger本地使用代码
 
