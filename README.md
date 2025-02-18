@@ -18,117 +18,30 @@
 
 - [📄 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
 - [🎞️ 视频教程](https://www.bilibili.com/video/BV1yr421E7MW)
+  
+## 补充部分教程-需求的软件及下载链接
+1.请先行下载并安装如下软件
+VSCode（用来打开并编写json，官网链接https://code.visualstudio.com/Download）
+python（基础支持，官网链接：https://www.python.org/downloads/）
+Git Bash（命令行工具，官网链接https://git-scm.com/downloads/win）
 
 ## 如何开发
+补充：1.先使用并打开cmd（win+r   输入cmd），然后按下列格式输入
+     git config --global user.name "Your Name"
+     git config --global user.email "email@***.com"
+   Your Nam 和 email@***.com 设置为你的用户名和邮箱
+   
+   2.在你愿意存放项目的地址，新建一个文件夹，然后有右键点击，并选择Open Git Bash here
+   下面相关内容均在打开的界面进行输入（若首次本地安装[MaaDebugger](https://github.com/MaaXYZ/MaaDebugger)失败，可多尝试几次）
+   本地使用代码
+   python -m MaaDebugger
+   相关内容请前往 MaaFramework(https://github.com/MaaXYZ/MaaFramework)及 MaaFramework项目模板(https://github.com/MaaXYZ/MaaPracticeBoilerplate）查看
+   
+   3.相关json的编写请打开***\assets\resource\pipeline下的json进行编写
+   4.相关照片请存放🌧于***\assets\resource\image文件夹内
+   5.推荐使用MFATools进行截图，区域选择，坐标查看，滑动坐标的选择和查看
 
-0. 使用右上角 `Use this template` - `Create a new repository` 来基于本模板创建您自己的项目。
 
-1. 完整克隆本项目及子项目（地址请修改为您基于本模板创建的新项目地址）。
-
-    ```bash
-    git clone --recursive https://github.com/MaaXYZ/MaaPracticeBoilerplate.git
-    ```
-
-    **请注意，一定要完整克隆子项目，不要漏了 `--recursive`，也不要下载 zip 包！**  
-    这步未正确操作会导致所有 OCR（文字识别）失败！
-
-2. 下载 MaaFramework 的 [Release 包](https://github.com/MaaXYZ/MaaFramework/releases)，解压到 `deps` 文件夹中。
-
-3. 配置资源文件。
-
-    ```bash
-    python ./configure.py
-    ```
-
-4. 按需求修改 `assets` 中的资源文件，请参考 MaaFramework 相关文档。
-
-    - 可使用 [MaaDebugger](https://github.com/MaaXYZ/MaaDebugger) 进行调试；
-    - 也可以在本地安装后测试：
-
-        1. 执行安装脚本
-
-            ```bash
-            python ./install.py
-            ```
-
-        2. 执行`MaaPiCli`
-
-            - **Windows**
-
-                运行 `install/MaaPiCli.exe`
-
-            - **Linux/macOS**
-
-                > 如果提示缺少启动权限，可通过 `chmod a+x install/MaaPiCli` 命令添加
-
-                运行 `install/MaaPiCli`
-
-5. 完成开发工作后，上传您的代码并发布版本。
-
-    ```bash
-    # 配置 git 信息（仅第一次需要，后续不用再配置）
-    git config user.name "您的 GitHub 昵称"
-    git config user.email "您的 GitHub 邮箱"
-    
-    # 提交修改
-    git add .
-    git commit -m "XX 新功能"
-    git push origin HEAD -u
-    ```
-
-6. 发布您的版本
-
-    需要**先**修改仓库设置 `Settings` - `Actions` - `General` - `Read and write permissions` - `Save`
-
-    ```bash
-    # CI 检测到 tag 会自动进行发版
-    git tag v1.0.0
-    git push origin v1.0.0
-    ```
-
-7. 更多操作，请参考[个性化配置](./docs/zh_cn/个性化配置.md)（可选）
-
-## 生态共建
-
-MAA 正计划建设为一类项目，而非舟的单一软件。
-
-若您的项目依赖于 MaaFramework，我们欢迎您将它命名为 MaaXXX, MXA, MAX 等等。当然，这是许可而不是限制，您也可以自由选择其他与 MAA 无关的名字，完全取决于您自己的想法！
-
-同时，我们也非常欢迎您提出 PR，在 [最佳实践列表](https://github.com/MaaXYZ/MaaFramework#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5) 中添加上您的项目！
-
-## FAQ
-
-### 1. 我是第一次使用 Python，在命令行输入 `python ./configure.py` 或 `python -m pip install MaaFW` 之后没有反应？没有报错，也没有提示成功，什么都没有
-
-Win10 或者 Win11 系统自带了一份 "Python"，但它其实只是一个安装器，是没法用的。  
-你需要做的是关闭它或者删除它的环境变量，然后自己去 Python 官网下载并安装一份 Python。  
-[参考方法](https://www.bilibili.com/read/cv24692025/)
-
-### 2. 我输入 `python ./configure.py` 后报错：`Please clone this repository completely, don’t miss "--recursive", and don’t download the zip package!`
-
-![项目不完整1](https://github.com/user-attachments/assets/e1f697c0-e5b6-4853-8664-a358df7327a8)
-
-**请仔细阅读文档！！！**  
-就是你现在正在看的本篇文档，就在上面，“如何开发”里的第一条，都已经用粗体标出来了，再问我要骂人了！
-
-### 3. 使用 MaaDebugger 或 MaaPicli 时弹窗报错，应用程序错误：应用程序无法正常启动
-
-![缺少运行库](https://github.com/user-attachments/assets/942df84b-f47d-4bb5-98b5-ab5d44bc7c2a)
-
-一般是电脑缺少某些运行库，请安装一下 [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe) 。
-
-### 4. 我在这个仓库里提了 Issue 很久没人回复
-
-这里是《项目模板》仓库，它仅仅是一个模板，一般很少会修改，开发者也较少关注。  
-在此仓库请仅提问模板相关问题，其他问题最好前往对应的仓库提出，如果有 log，最好也带上它（`debug/maa.log` 文件）
-
-- MaaFW 本身及 MaaPiCli 的问题：[MaaFramework/issues](https://github.com/MaaXYZ/MaaFramework/issues)
-- MaaDebugger 的问题：[MaaDebugger/issues](https://github.com/MaaXYZ/MaaDebugger/issues)
-- 不知道算是哪里的、其他疑问等：[讨论区](https://github.com/MaaXYZ/MaaFramework/discussions)
-
-### 5. OCR 文字识别一直没有识别结果，报错 "Failed to load det or rec", "ocrer_ is null"
-
-你不但没有仔细阅读文档，还无视了前面步骤的报错。我不想解释了，请再把本文档仔细阅读一遍！
 
 ## 鸣谢
 
