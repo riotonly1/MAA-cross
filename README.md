@@ -14,7 +14,7 @@
 > **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
 > 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
 
-## 即刻开始
+## 即刻开始      
 
 - [📄 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
 - [🎞️ 视频教程](https://www.bilibili.com/video/BV1yr421E7MW)
@@ -62,6 +62,8 @@ MaaDebugger  load失败，请检查json是否存在编写错误，打开的Git B
 请使用Git Bash窗口运行如下命令
 
 python -m MaaDebugger
+
+
 
 **摸鱼进度：（均存在各种各样的神奇问题和bug）**
 
