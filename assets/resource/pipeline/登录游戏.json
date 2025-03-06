@@ -138,8 +138,7 @@
     },
     "通用-啥也不做":{            
         "action": "DoNothing",
-        "post_delay": 5000,
-        "next":["日常"]
+        "post_delay": 5000
     },
     "领取邮箱":{
         "recognition": "TemplateMatch", 

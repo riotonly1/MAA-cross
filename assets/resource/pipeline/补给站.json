@@ -99,9 +99,7 @@
         "recognition": "TemplateMatch", 
         "template" : "返回主页.png",    
         "roi" : [174,17,95,60],   
-        "action": "Click",
-        "next": [
-            "模拟军演-出击"
-        ]
+        "action": "Click"
+        
     } 
 }
