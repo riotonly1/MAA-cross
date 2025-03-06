@@ -1,0 +1,288 @@
+{
+    "周本": {
+        "next":[
+        "周本-出击",
+        "进入周本",
+        "进入碎星虚影",
+        "周本-已满",
+        "周本-防卡点击",
+        "周本-只使用1支队伍",
+        "周本-开始战斗3"
+         ]
+    },
+    "周本-出击": {
+        "recognition": "OCR",           
+        "expected": "出击", 
+        "roi" : [1132,594,98,56],            
+        "action": "click",
+        "post_delay":3000,      
+        "next": [
+            "进入周本"
+        ]
+    },
+    "进入周本": {
+        "recognition": "OCR",           
+        "expected" : "活动探索", 
+        "roi" : [590,119,153,55],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "进入碎星虚影"
+        ]
+    },
+    "进入碎星虚影": {
+        "recognition": "OCR",           
+        "expected" : "碎星", 
+        "roi" : [507,472,162,88],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "周本-战斗列表"
+        ]
+    },
+    "周本-战斗列表": {
+        "next":[
+        "周本-戈里刻"
+         ]
+    },
+    "周本-戈里刻": {
+        "recognition": "OCR",           
+        "expected" : "戈里刻", 
+        "roi" : [151,391,242,112],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "周本-阿瑞斯"
+        ]
+    },
+    "周本-返回主界面":{
+        "recognition": "TemplateMatch", 
+        "template" : "返回主页.png",    
+       "roi" : [164,21,112,51],   
+        "action": "Click"
+
+    } ,
+    "周本-阿瑞斯": {
+        "next": [
+            "周本-已满",
+            "周本-防卡点击"
+        ]
+
+    },
+    "周本-已满": {
+        "recognition": "OCR",           
+        "expected" : "600", 
+        "roi" : [42,601,124,49],            
+        "action": "DoNothing",
+        "post_delay":1000,       
+        "next": [
+            "周本-返回主界面"
+        ]
+    },
+    "周本-防卡点击": {
+        "recognition": "TemplateMatch", 
+        "template" : "周本-防卡.png",    
+        "roi" : [661,259,156,108],   
+        "action": "Click",
+        "post_delay":1000,      
+        "next": [
+            "周本-防卡点击2"
+        ]
+    },
+    "周本-防卡点击2": {
+        "recognition": "TemplateMatch", 
+        "template" : "周本-防卡.png",    
+        "roi" : [671,131,152,115],   
+        "action": "Click",
+        "post_delay":1000,      
+        "next": [
+            "周本-开始战斗"
+        ]
+    },
+    "周本-开始战斗": {
+        "recognition": "OCR",           
+        "expected" : "开始战斗", 
+        "roi" : [1061,623,153,77],            
+        "action": "click",
+        "post_delay":1000,      
+        "next": [
+            "周本-确认进入",
+            "周本-只使用1支队伍"
+        ]
+    },
+    "周本-确认进入": {
+        "recognition": "OCR",           
+        "expected" : "提示", 
+        "roi" : [286,166,62,43],   
+        "pre_delay":1000,         
+        "action": "click",
+        "target" : [810,447,1,1],
+        "post_delay":1000,      
+        "next": [
+                "周本-只使用1支队伍"
+        ]
+    },
+    "周本-只使用1支队伍": {
+       "recognition": "ColorMatch",
+       "roi" : [1121,365,90,43],
+        "method" : 4,
+        "lower" : [255,195,66],
+        "upper" : [255,195,66],
+        "action": "Click",
+        "target" : [1165,387,1,1],
+        "post_delay":1000,      
+        "next": [
+            "周本-开始战斗2"
+        ]
+    },
+    "周本-开始战斗2": {
+        "recognition": "OCR",           
+        "expected" : "未启用队伍", 
+        "roi" : [552,451,182,72],            
+        "action": "DoNothing",
+        "post_delay":1000,      
+        "next": [
+            "周本-开始战斗3"
+        ]
+    },
+    "周本-开始战斗3": {
+        "recognition": "OCR",           
+        "expected" : "开始行动", 
+        "roi" : [1076,627,157,67],            
+        "action": "click",
+        "post_delay":1000,      
+        "next": [
+            "周本-戈里刻战斗"
+        ]
+    },
+    "周本-戈里刻战斗": {
+        "pre_wait_freezes":2000,
+        "next": [
+            "周本-戈里刻战斗1",
+            "周本-戈里刻战斗2",
+            "周本-戈里刻战斗3",
+            "周本-戈里刻战斗4",
+            "周本-戈里刻战斗5",
+            "周本-戈里刻战斗6",
+            "周本-戈里刻战斗7"   
+        ]
+    },
+    "周本-戈里刻战斗1":{
+        "recognition": "OCR", 
+        "expected" : "0",    
+       "roi" : [1178,25,61,31],
+        "action": "Click",
+        "target" : [563,363,1,1],
+        "post_delay":2000,
+        "next": ["周本-戈里刻战斗"]
+    } ,
+    "周本-戈里刻战斗2":{
+        "recognition": "OCR", 
+        "expected" : "1",    
+       "roi" : [1182,22,29,33],
+        "action": "Click",
+        "target" : [517,267,1,1],
+        "post_delay":2000,
+        "next": ["周本-戈里刻战斗"]
+    } ,
+    "周本-戈里刻战斗3":{
+        "recognition": "OCR", 
+        "expected" : "2",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [446,325,1,1],
+        "post_delay":2000,
+        "next": ["周本-战斗结束",
+                 "周本-战斗中-等待"]
+    } ,
+    "周本-戈里刻战斗4":{
+        "recognition": "OCR", 
+        "expected" : "3",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [469,206,1,1],
+        "post_delay":2000,
+        "next": ["周本-战斗结束",
+                 "周本-战斗中-等待"]
+    } ,
+    "周本-戈里刻战斗5":{
+        "recognition": "OCR", 
+        "expected" : "4",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [425,401,1,1],
+        "post_delay":2000,
+        "next": ["周本-戈里刻战斗"]
+    } ,
+    "周本-戈里刻战斗6":{
+        "recognition": "OCR", 
+        "expected" : "5",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [479,194,1,1],
+        "post_delay":2000,
+        "next": ["周本-战斗结束",
+                 "周本-战斗中-等待"]
+    } ,
+    "周本-戈里刻战斗7":{
+        "recognition": "OCR", 
+        "expected" : "6",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [612,198,1,1],
+        "post_delay":2000,
+        "next": ["周本-跳过boss动画"]
+    } ,
+    "周本-跳过boss动画":{
+        "recognition": "OCR", 
+        "expected" : "跳过",    
+       "roi" : [1118,28,106,49],
+        "action": "Click",
+        "post_delay":2000,
+        "next": ["周本-确认获得物品"],
+        "interrupt":["周本-boss战-等待"]        
+    } ,
+    "周本-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [511,154,276,116],
+        "pre_delay":3000,
+        "action": "Click",
+        "next": ["周本-boss战结束"]
+    } ,
+    "周本-boss战结束": {
+        "recognition": "OCR",           
+        "expected" : "战斗", 
+        "roi" : [26,33,350,94],   
+        "pre_delay":3000,      
+        "action": "click",
+        "post_delay":2000,      
+        "next": ["周本-阿瑞斯"]
+    },
+    "周本-boss战-等待": {  
+        "action": "DoNothing",
+        "pre_delay":4000, 
+        "next":["周本-确认获得物品",
+                "周本-boss战-等待"]       
+    },
+    "周本-战斗中-等待": {  
+        "action": "DoNothing",
+        "pre_delay":5000, 
+        "next":["周本-战斗结束",
+                "周本-战斗中-等待"]       
+    },
+    "周本-战斗结束": {
+        "recognition": "OCR",           
+        "expected" : "战斗", 
+        "roi" : [26,33,350,94],   
+        "pre_delay":3000,      
+        "action": "click",
+        "post_delay":3000,      
+        "next": ["周本-戈里刻战斗"]
+    }
+}

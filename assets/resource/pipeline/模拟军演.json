@@ -1,0 +1,112 @@
+{
+    "模拟军演-出击": {
+        "recognition": "OCR",           
+        "expected": "出击", 
+        "roi" : [1132,594,98,56],            
+        "action": "click",
+        "post_delay":3000,      
+        "next": [
+            "进入模拟军演"
+        ]
+    },
+    "进入模拟军演": {
+        "recognition": "OCR",           
+        "expected" : "模拟军演", 
+        "roi" : [243,334,143,51],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "进入镜像竞技"
+        ]
+    },
+    "进入镜像竞技": {
+        "recognition": "OCR",           
+        "expected" : "镜像竞技", 
+       "roi" : [152,400,219,61],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "军演-战斗列表"
+        ]
+    },
+    "军演-战斗列表": {
+        "next":[
+        "军演-无脑挑战"
+         ]
+    },
+    "军演-无脑挑战": {
+        "recognition": "OCR",           
+        "expected" : "积分", 
+        "roi" : [75,189,361,162],            
+        "action": "click",
+        "post_delay":2000,      
+        "next": [
+            "军演-无脑挑战1",
+            "军演-无挑战次数"
+        ]
+    },
+    "军演-无挑战次数": {
+        "recognition": "OCR",           
+        "expected" : "模拟次数购买", 
+        "roi" : [224,173,185,38],            
+        "action": "click",
+        "target" : [134,279,1,1],
+        "post_delay":2000,      
+        "next": [
+            "军演-返回主界面"
+        ]
+    },
+    "军演-返回主界面":{
+        "recognition": "TemplateMatch", 
+        "template" : "返回主页.png",    
+       "roi" : [164,21,112,51],   
+        "action": "Click"
+
+    } ,
+    "军演-无脑挑战1": {
+        "recognition": "OCR",           
+        "expected" : "挑战", 
+        "roi" : [720,617,65,44],            
+        "action": "click",
+        "post_delay":3000,      
+        "next": [
+            "军演-战斗中-等待"
+        ]
+
+    },
+    "军演-提升到新阶段": {
+        "recognition": "OCR",           
+       "expected" : "新的阶段", 
+       "roi" : [454,159,379,79],            
+        "action": "click",
+        "post_delay":1000,      
+        "next": [
+            "军演-确认获得物品",
+            "军演-战斗列表"
+        ]
+    },
+    "军演-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [511,154,276,116],
+        "action": "Click",
+        "next": ["军演-战斗列表"]
+    } ,
+    "军演-战斗中-等待": {  
+        "action": "DoNothing",
+        "pre_delay":8000, 
+        "next":["军演-战斗结束",
+                "军演-战斗中-等待"]       
+    },
+    "军演-战斗结束": {
+        "recognition": "OCR",           
+        "expected" : "战斗", 
+        "roi" : [26,33,350,94],   
+        "pre_delay":3000,      
+        "action": "click",
+        "post_delay":3000,      
+        "next": ["军演-确认获得物品",
+                 "军演-提升到新阶段"
+        ]
+    }
+}

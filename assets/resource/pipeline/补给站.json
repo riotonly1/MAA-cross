@@ -1,0 +1,107 @@
+{
+    "补给站": {
+        "next":[
+        "补给站-进入补给站",
+        "补给站-点击礼包"
+         ],
+         "interrupt":["重连网络"]
+    },
+    "补给站-进入补给站": {
+        "recognition": "OCR",           
+        "expected" : "补给站", 
+        "roi" : [1018,643,93,62],            
+        "action": "Click",
+        "post_delay":1000,      
+        "next": [
+            "补给站"
+        ]
+    },
+    "补给站-点击礼包": {
+        "recognition": "OCR",           
+        "expected" : "礼包", 
+        "roi" : [428,94,52,30],            
+        "action": "Click",  
+        "post_delay":2000, 
+        "next": [
+                 "补给站-购买免费礼包",
+                 "补给站-限时贸易所"
+        ]
+    },
+    "补给站-购买免费礼包": {
+        "recognition": "OCR",           
+        "expected" : "免费", 
+        "roi" : [521,544,97,39],            
+        "action": "Click",     
+        "next": [
+                 "补给站-购买确认"
+        ]
+    },
+    "补给站-购买确认": {
+        "recognition": "OCR",           
+        "expected" : "购买", 
+        "roi" : [803,527,82,45],            
+        "action": "Click",     
+        "next": [
+            "补给站-确认获得物品"
+        ]
+    },
+    "补给站-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [507,156,250,80],
+        "action": "Click",
+        "next": ["补给站"
+                 ]
+    } ,
+    "补给站-限时贸易所":{
+        "recognition": "OCR", 
+        "expected" : "限时",    
+        "roi" : [545,86,166,51],
+        "action": "Click",
+        "next": ["补给站-采购物品清单"
+                 ]
+    } ,
+    "补给站-采购物品清单":{
+        "next": ["补给站-折扣物品10%",
+                 "补给站-返回主页"
+                 ]
+    } ,
+    "补给站-折扣物品10%":{
+        "recognition": "TemplateMatch", 
+        "template" : "10%折扣.png",
+        "threshold":0.7,  
+        "green_mask":true, 
+        "roi" : [33,172,1172,461],   
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ]
+    } ,
+    "补给站-限时贸易所-购买确认": {
+        "recognition": "OCR",           
+        "expected" : "购买", 
+        "roi" : [801,523,87,59],            
+        "action": "Click", 
+        "post_delay":2000,    
+        "next": [
+            "补给站-限时贸易所-确认获得物品"
+        ]
+    },
+    "补给站-限时贸易所-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [513,149,234,90],
+        "action": "Click",
+        "post_delay":2000,
+        "next": ["补给站-采购物品清单"
+                 ]
+    } ,
+    "补给站-返回主页":{
+        "recognition": "TemplateMatch", 
+        "template" : "返回主页.png",    
+        "roi" : [174,17,95,60],   
+        "action": "Click",
+        "next": [
+            "模拟军演-出击"
+        ]
+    } 
+}

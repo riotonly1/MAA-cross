@@ -1,0 +1,25 @@
+{
+    "登录": {
+        "recognition": "OCR",           
+        "expected": "交错战线",             
+        "action": "Click",    
+        "next":[
+            "开始游戏"
+        ],
+        "interrupt":["等待"]
+
+    } ,
+    "等待": {
+        "recognition": "TemplateMatch", 
+        "template" : "neri.png",    
+         "recommended roi" : [431,296,411,131] ,
+         "pre_delay":2000,   
+        "action": "DoNothing"
+
+    },
+      "开始游戏": {
+        "recognition": "OCR",           
+        "expected": "开始游戏",             
+        "action": "Click"
+    }         
+}
