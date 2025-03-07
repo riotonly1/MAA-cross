@@ -20,6 +20,7 @@
         "每日签到",
         "充值-不再提示",
         "领取邮箱",
+        "登录-点击看板",
         "等待列表"
          ],
          "rate_limit": 2000,
@@ -133,12 +134,18 @@
         "roi" : [776,503,219,68],             
         "action": "Click",
         "target":[1078,152,1,1],
-        "next":["领取邮箱",
-                "通用-啥也不做"]
+        "next":["登录游戏1"]
+    },
+    "登录-点击看板":{
+      "recognition": "OCR",           
+        "expected": "出击", 
+        "roi" : [1132,594,98,56],                       
+        "action": "Click",
+        "target" : [816,276,1,1],
+        "next":["通用-啥也不做"]
     },
     "通用-啥也不做":{            
-        "action": "DoNothing",
-        "post_delay": 5000
+        "action": "DoNothing"
     },
     "领取邮箱":{
         "recognition": "TemplateMatch", 
@@ -167,7 +174,9 @@
         "recognition": "TemplateMatch", 
         "template" : "返回主页.png",    
        "roi" : [164,21,112,51],   
-        "action": "Click"
+        "action": "Click",
+        "next": ["登录游戏1"
+                 ]
     } 
 }
 

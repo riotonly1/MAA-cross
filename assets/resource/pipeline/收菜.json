@@ -316,8 +316,6 @@
         "template" : "返回主页.png",    
        "roi" : [164,21,112,51],   
         "action": "Click",
-        "post_delay": 5000,
-        "next": ["补给站"]
-
-    } 
+        "post_delay": 5000
+    }
 }
