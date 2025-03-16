@@ -13,7 +13,7 @@
         "action": "Click",
         "post_delay":1000,      
         "next": [
-            "补给站"
+            "补给站-点击礼包"
         ]
     },
     "补给站-点击礼包": {
@@ -69,7 +69,7 @@
     "补给站-折扣物品10%":{
         "recognition": "TemplateMatch", 
         "template" : "10%折扣.png",
-        "threshold":0.7,  
+        "threshold":0.8,  
         "green_mask":true, 
         "roi" : [33,172,1172,461],   
         "action": "Click",

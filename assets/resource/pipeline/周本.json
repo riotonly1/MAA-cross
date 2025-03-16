@@ -123,14 +123,12 @@
         ]
     },
     "周本-只使用1支队伍": {
-       "recognition": "ColorMatch",
-       "roi" : [1121,365,90,43],
-        "method" : 4,
-        "lower" : [255,195,66],
-        "upper" : [255,195,66],
-        "action": "Click",
-        "target" : [1165,387,1,1],
-        "post_delay":1000,      
+       "recognition": "OCR",           
+        "expected" : "使用", 
+        "roi" : [1060,361,88,46],   
+        "pre_delay":1000,         
+        "action": "click",
+        "post_delay":1000,        
         "next": [
             "周本-开始战斗2"
         ]

@@ -14,19 +14,75 @@
 > **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
 > 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
 
+## 功能介绍（自用摆烂板）
+注意事项
+
+使用MFA任务管理器时若任务列表无任务，请手动点击+号图标添加任务
+
+仅在雷电模拟器上进行过测试，本人使用时未发现严重bug
+
+本人为代码小白，未防止避免误点击造成损失，请诸位使用时，最好看着屏幕运行
+
+1.启动app并登录至主界面
+
+2.基建收菜
+ 
+    包含内容
+    1. 矿场收菜
+
+    2. 更换干员
+    更换疲惫干员，请先设置好预设1和预设2
+
+    由于游戏特性，干员不在设施中便可自动恢复心情，所以未写更换干员宿舍人员内容
+
+    3.订单
+    浏览并交易蓝图，无蓝图材料会自行合成，请确保自己材料充足
+
+3.免费礼包+限时贸易所购买折扣物品
+  
+   请确保自己星币充足
+
+4.模拟军演
+   请先设置好自己的整容
+
+   只会无脑打第一个人
+
+5.周本（第一关）
+   只会使用队伍1，请先编好队伍后进入周本一次。
+
+   顺便刷刷好感度，建议一两个高练度角色带一群低好感角色。
+
+6.暂无自动打本选项，做日常请在上述任务完成后，自行选择要打的本进行扫荡，后自行领取每日任务奖励和通行证奖励
+
+## 小白从零开始补充内容
+请先下载
+[Git bash]（https://gitforwindows.org/?spm=a2c6h.12873639.article-detail.4.75dd4775UWa3Ar）               
+基础支持
+
+安装之后，先在你想存放项目的地点新建文件夹，后右键点击文件夹并点击 Open Git Bash here 后续克隆，启用MAAdebager等均在代开的窗口进行
+
+MaaDebugger调试json文件，加载失败时，可在打开的窗口查看红色内容，确认报错内容
+
+[vs code](https://code.visualstudio.com/)
+编写json
+
+[MFATools](https://github.com/SweetSmellFox/MFATools)
+裁剪图片、获取区间、确定点击坐标、获取颜色的upper和lower等功能
+
 ## 即刻开始
 
 - [📄 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
 - [🎞️ 视频教程](https://www.bilibili.com/video/BV1yr421E7MW)
 
+
 ## 如何开发
 
 0. 使用右上角 `Use this template` - `Create a new repository` 来基于本模板创建您自己的项目。
 
-1. 完整克隆本项目及子项目（地址请修改为您基于本模板创建的新项目地址）。
+1. 完整克隆本项目及子项目
 
     ```bash
-    git clone --recursive https://github.com/MaaXYZ/MaaPracticeBoilerplate.git
+    git clone --recursive https://github.com/riotonly1/MAA-cross
     ```
 
     **请注意，一定要完整克隆子项目，不要漏了 `--recursive`，也不要下载 zip 包！**  
@@ -43,7 +99,7 @@
 4. 按需求修改 `assets` 中的资源文件，请参考 MaaFramework 相关文档。
 
     - 可使用 [MaaDebugger](https://github.com/MaaXYZ/MaaDebugger) 进行调试；
-    - 也可以在本地安装后测试：
+    - 也可以在本地安装后测试： python -m MaaDebugger
 
         1. 执行安装脚本
 
@@ -87,6 +143,8 @@
     ```
 
 7. 更多操作，请参考[个性化配置](./docs/zh_cn/个性化配置.md)（可选）
+
+
 
 
 ## 鸣谢
