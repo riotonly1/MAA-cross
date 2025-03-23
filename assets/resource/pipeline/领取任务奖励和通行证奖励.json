@@ -1,0 +1,156 @@
+{
+    "领取任务列表": {
+        "next": [
+            "进入领取",
+            "领取-一键领取",
+            "领取-一键领取-确认获得物品",
+            "领取-重新执行"
+        ]
+    },
+    "领取-重新执行": {
+        "recognition": "TemplateMatch",
+        "template": "返回主页.png",
+        "roi": [164, 21, 112, 51],
+        "action": "Click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["领取任务列表"],
+        "timeout": 30000
+    },
+    "进入领取": {
+        "recognition": "OCR",
+        "expected" : "任务",
+        "roi" : [674,654,73,44],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["领取任务列表"],
+        "timeout": 30000
+    },
+    "领取-一键领取": {
+        "recognition": "OCR",
+        "expected" : "领取",
+        "roi" : [1042,250,171,70],
+        "action": "click",
+        "target" : [1157,107,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["领取任务列表"],
+        "timeout": 30000
+    },
+    "领取-一键领取-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [526,165,222,63],
+        "action": "Click",
+        "next": ["领取-返回主页"
+                 ]
+    } ,
+    "领取-返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "返回主页.png",
+        "roi": [164, 21, 112, 51],
+        "action": "Click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "timeout": 30000
+    },
+    "通行证任务列表": {
+        "next": [
+            "进入通行证",
+            "通行证-任务",
+            "通行证-一键领取",
+            "通行证-一键领取-确认获得物品",
+            "通行证-重新执行"
+        ]
+    },
+    "通行证-重新执行": {
+        "recognition": "TemplateMatch",
+        "template": "返回主页.png",
+        "roi": [164, 21, 112, 51],
+        "action": "Click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["通行证任务列表"],
+        "timeout": 30000
+    },
+    "进入通行证": {
+        "recognition": "OCR",
+        "expected" : "勘探指南",
+        "roi" : [21,85,172,91],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["通行证任务列表"],
+        "timeout": 30000
+    },
+    "通行证-任务": {
+        "recognition": "OCR",
+        "expected" : "任务",
+        "roi" : [923,277,192,73],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["通行证任务列表"],
+        "timeout": 30000
+    },    
+    "通行证-一键领取": {
+        "recognition": "OCR",
+        "expected" : "领取",
+        "roi" : [903,180,150,57],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["通行证任务列表"],
+        "timeout": 30000
+    },
+    "通行证-一键领取-确认获得物品":{
+        "recognition": "OCR", 
+        "expected" : "获得物品",    
+        "roi" : [526,165,222,63],
+        "action": "Click",
+        "next": ["通行证-返回主页1"
+                 ]
+    } ,
+    "通行证-返回主页1": {
+        "recognition": "OCR", 
+        "expected" : "勘探任务",  
+        "roi" : [171,79,140,40],
+        "action": "Click",
+        "target" : [216,40,0,0],
+        "next": ["通行证-返回主页2"
+                 ],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "timeout": 30000
+    },
+    "通行证-返回主页2": {
+        "recognition": "TemplateMatch",
+        "template": "返回主页.png",
+        "roi": [164, 21, 112, 51],
+        "action": "Click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "timeout": 30000
+    }
+}
