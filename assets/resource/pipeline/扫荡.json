@@ -9,10 +9,150 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next":["扫荡次数选择"],
+        "next":["扫荡次数选择",
+                 "自选扫荡次数"],
         "timeout": 30000
     },
+    "自选扫荡次数": {
+        "enabled": false,
+        "next":[
+        "自选-次数1",
+        "自选-次数2"
+         ],
+         "interrupt":["重连网络"]
+    },
+    "自选-次数1": {
+            "enabled": false,
+            "recognition": "OCR",
+            "expected": "开始战斗",
+            "roi" : [946,541,127,39],
+            "action": "click",
+            "pre_wait_freezes": {
+                "time": 1000,
+                "threshold": 0.95
+            },
+            "next_doc": "Set in code.",
+            "timeout": 30000
+        }, 
+    "自选-次数2": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },   
+    "自选-次数3": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    }, 
+    "自选-次数4": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数5": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数6": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数7": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数8": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数9": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next_doc": "Set in code.",
+        "timeout": 30000
+    },
+    "自选-次数10": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template" : "选择次数.png",
+        "roi" : [503,531,84,59],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+       "next_doc": "Set in code.",
+        "timeout": 30000
+    }, 
     "扫荡次数选择": {
+        "enabled": true,
         "next":[
         "检查体力-白",
         "检查体力-红"
@@ -46,11 +186,9 @@
         "timeout": 30000
     },   
     "检查体力-红": {
-        "recognition": "ColorMatch",
-        "roi" : [730,547,56,38],
-        "method" : 4,
-        "lower" : [206,53,66],
-        "upper" : [206,53,66],
+        "recognition": "TemplateMatch",
+        "template" : "扫荡次数.png",
+        "roi" : [719,549,67,35],
         "action": "DoNothing",
         "pre_wait_freezes": {
             "time": 1000,
@@ -73,13 +211,10 @@
         "timeout": 30000
     },
     "检查体力-红（次数为1）": {
-        "recognition": "ColorMatch",
-        "roi" : [730,547,56,38],
-        "method" : 4,
-        "lower" : [206,53,66],
-        "upper" : [206,53,66],
-        "action": "click",
-        "target" : [220,47,1,1],
+        "recognition": "TemplateMatch",
+        "template" : "扫荡次数.png",
+        "roi" : [719,549,67,35],
+        "action": "DoNothing",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
@@ -87,7 +222,81 @@
         "next": ["通用-返回主页"],
         "timeout": 30000
     }, 
-  
+    "使用燃料界面": {
+        "enabled": false,
+        "recognition": "OCR",
+        "expected" : "燃料补给",
+        "roi" : [229,136,130,65],
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["使用10燃料"],
+        "timeout": 30000
+    },
+    "使用10燃料": {
+        "recognition": "OCR",
+        "expected" : "使用",
+        "roi" : [679,493,118,74],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["使用10燃料2"],
+        "timeout": 30000
+    },
+    "使用10燃料2": {
+        "recognition": "OCR",
+        "expected" : "使用",
+        "roi" : [744,451,97,56],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["燃料补给"],
+        "timeout": 30000
+    },
+    "燃料补给": {
+        "recognition": "OCR",
+        "expected" : "燃料补给",
+        "roi" : [499,154,258,103],
+        "action": "click",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["燃料返回"],
+        "timeout": 30000
+    },
+    "燃料返回": {
+        "recognition": "OCR",
+        "expected" : "使用",
+        "roi" : [744,451,97,56],
+        "action": "click",
+        "target" : [632,82,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["燃料返回2"],
+        "timeout": 30000
+    },
+    "燃料返回2": {
+        "recognition": "OCR",
+        "expected" : "燃料补给",
+        "roi" : [229,136,130,65],
+        "action": "click",
+        "target" : [550,34,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["开始战斗"],
+        "timeout": 30000
+    },
     "开始战斗": {
         "recognition": "OCR",
         "expected": "开始战斗",
@@ -97,7 +306,8 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["开启加成",
+        "next": ["使用燃料界面",
+                 "开启加成",
                   "扫荡成功"],
         "timeout": 30000
     }, 
@@ -116,7 +326,7 @@
     "扫荡成功": {
         "recognition": "OCR",
         "expected": "扫荡",
-        "roi" : [23,22,376,135],
+        "roi" : [766,521,328,149],
         "action": "click",
         "pre_wait_freezes": {
             "time": 3000,
@@ -128,7 +338,7 @@
     "扫荡成功-检查": {
         "recognition": "OCR",
         "expected": "扫荡",
-        "roi" : [23,22,376,135],
+        "roi" : [766,521,328,149],
         "action": "click",
         "pre_wait_freezes": {
             "time": 3000,
@@ -140,7 +350,7 @@
     "扫荡结束": {
         "recognition": "OCR",
         "expected" : "扫荡",
-        "roi" : [840,562,117,98],
+        "roi" : [766,521,328,149],
         "action": "DoNothing",
         "timeout": 30000,
         "next": ["通用-返回主页"]

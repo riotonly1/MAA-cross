@@ -19,6 +19,7 @@
         ]
     },
     "收菜-矿场": {
+        "enabled":false,
         "recognition": "TemplateMatch", 
         "template" : "收菜.png",    
          "roi" : [444,440,224,76] ,   
@@ -37,6 +38,7 @@
         ]
     },
     "收菜-驻员状况": {
+        "enabled":false,
         "recognition": "TemplateMatch", 
         "template" : "是否换班.png",    
          "roi" : [167,558,52,32],   
@@ -143,6 +145,7 @@
         "next":["收菜"]
        },
     "收菜-交易所": {
+        "enabled":false,
         "recognition": "TemplateMatch", 
         "template" : "是否进入交易所.png",    
          "roi" : [1083,269,94,104],   
@@ -166,17 +169,21 @@
         "action": "DoNothing",
         "next": [
             "收菜-交易蓝图10-1",
-            "收菜-点击好友"
+            "收菜-点击好友",
+            "收菜-返回主界面"
                  ]
     } ,
     "收菜-点击好友":{
+        "enabled":false,
         "recognition": "OCR", 
         "expected" : "选择好友",    
         "roi" : [83,637,96,38],   
         "action": "Click",
-        "next": ["收菜-好友滑到最左1"]
+        "next": ["收菜-好友滑到最左1",
+                 "收菜-拜访第一位"]
     } ,
     "收菜-好友滑到最左1": {
+        "enabled":false,
         "recognition": "OCR", 
         "OCR" : "驻员预设",    
         "roi" : [969,158,91,517],   
