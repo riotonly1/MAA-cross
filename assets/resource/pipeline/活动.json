@@ -8,75 +8,71 @@
     "点击活动": {
         "recognition": "OCR",
         "roi" : [1044,419,235,141],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["活动-领取门票"],
-        "timeout": 30000,
+        "action": "click",
+                "next": ["活动-领取门票"],
         "on_error": ["出击任务列表"]
     },
     "活动-领取门票": {
         "recognition": "OCR",
         "roi" : [148,581,249,123],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
+        "action": "click",        
         "timeout": 30000,
         "on_error": ["出击任务列表"]
     },
     "活动-领取": {
         "recognition": "OCR",
         "roi" : [1006,193,182,214],
-        "action": "click",
-        "target" : [1102,110,1,1],
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
-        "timeout": 30000
+        "action": "click",
+        "target" : [1102,110,1,1]
     },
     "活动-选择关卡": {
         "recognition": "OCR",
         "roi" : [1045,510,177,109],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
+        "action": "click",        
         "timeout": 30000
     },
     "活动-选择模式": {
         "recognition": "OCR",
         "roi" : [13,123,130,211],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
-        "timeout": 30000
+        "action": "click"
     }, 
     "活动-滑动选择关卡": {   
-        "action": "Swipe",
-        "begin" : [1237,601,1,1],
-        "end" : [152,593,1,1],
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
+        "action": "Swipe",
+        "begin" : [1237,601,1,1],
+        "end" : [152,593,1,1],        
         "next":["活动-选择第几关"]
     }, 
     "活动-选择第几关": {
         "recognition": "OCR",
-        "roi" : [464,471,784,248],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
-        "timeout": 30000
+        "roi" : [464,471,784,248],
+        "action": "click"
     }
 }

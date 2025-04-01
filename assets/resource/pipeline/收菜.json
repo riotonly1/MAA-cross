@@ -48,7 +48,7 @@
     "收菜-驻员界面": {
         "recognition": "OCR", 
         "OCR" : "驻员预设",    
-         "roi" : [969,158,91,517],   
+        "roi" : [220,84,865,606],   
         "action": "DoNothing",
         "next": [
             "收菜-指挥部",
@@ -61,63 +61,88 @@
     ]
     },
     "收菜-指挥部": {
-        "recognition": "ColorMatch",
-        "roi" : [659,208,278,35],
-        "method" : 4,
-        "lower" : [252,81,82],
-        "upper" : [252,81,82],
+        "recognition": "TemplateMatch",
+        "template" : ["干员-红.png","干员-黄.png"],
+        "roi" : [232,142,849,122],
+        "action": "DoNothing",
+        "next": ["收菜-指挥部-预设"
+                ]
+    },
+    "收菜-指挥部-预设": {
+        "recognition": "TemplateMatch", 
+        "template" : "预设.png", 
+        "roi" : [232,142,849,122],
         "action": "Click",
-        "target" : [1012,199,1,1],
-        "next": ["收菜-更换队员",
-                 "收菜-驻员界面"
+        "next": [ "收菜-更换队员",
+                  "收菜-驻员界面"
                 ]
     },
     "收菜-发电站": {
-        "recognition": "ColorMatch",
-        "roi" : [661,333,279,52],
-        "method" : 4,
-        "lower" : [252,81,82],
-        "upper" : [252,81,82],
+        "recognition": "TemplateMatch",
+        "template" : ["干员-红.png","干员-黄.png"],
+        "roi" : [237,280,840,125],
+        "action": "DoNothing",
+        "next": ["收菜-发电站-预设"
+                ]
+    },
+    "收菜-发电站-预设": {
+        "recognition": "TemplateMatch", 
+        "template" : "预设.png", 
+        "roi" : [237,280,840,125],
         "action": "Click",
-        "target" : [1011,341,1,1],
-       "next": ["收菜-更换队员",
-                 "收菜-驻员界面"
+        "next": [ "收菜-更换队员",
+                  "收菜-驻员界面"
                 ]
     },
     "收菜-挖掘矿场": {
-        "recognition": "ColorMatch",
-        "roi" : [457,479,462,45],
-        "method" : 4,
-        "lower" : [252,81,82],
-        "upper" : [252,81,82],
+        "recognition": "TemplateMatch",
+        "template" : ["干员-红.png","干员-黄.png"],
+        "roi" : [232,418,839,115],
+        "action": "DoNothing",
+        "next": ["收菜-挖掘矿场-预设"
+                ]
+    },
+    "收菜-挖掘矿场-预设": {
+        "recognition": "TemplateMatch", 
+        "template" : "预设.png", 
+        "roi" : [232,418,839,115],
         "action": "Click",
-        "target" : [1011,477,1,1],
-       "next": ["收菜-更换队员",
-                 "收菜-驻员界面"
+        "next": [ "收菜-更换队员",
+                  "收菜-驻员界面"
                 ]
     },
     "收菜-原料交易所": {
-        "recognition": "ColorMatch",
-        "roi" : [653,128,302,103],
-        "method" : 4,
-        "lower" : [252,81,82],
-        "upper" : [252,81,82],
+        "recognition": "TemplateMatch",
+        "template" : ["干员-红.png","干员-黄.png"],
+        "roi" : [231,128,865,138],
+        "action": "DoNothing",
+        "next": ["收菜-原料交易所-预设"
+                ]
+    },
+    "收菜-原料交易所-预设": {
+        "recognition": "TemplateMatch", 
+        "template" : "预设.png", 
+        "roi" : [231,128,865,138],
         "action": "Click",
-        "target" : [1013,174,1,1],
-       "next": ["收菜-更换队员",
-                 "收菜-驻员界面"
+        "next": [ "收菜-更换队员",
+                  "收菜-驻员界面"
                 ]
     },
     "收菜-研发中心": {
-        "recognition": "ColorMatch",
-        "roi" : [633,399,324,103],
-        "method" : 4,
-        "lower" : [252,81,82],
-        "upper" : [252,81,82],
+        "recognition": "TemplateMatch",
+        "template" : ["干员-红.png","干员-黄.png"],
+        "roi" : [219,383,889,147],
+        "action": "DoNothing",
+        "next": ["收菜-研发中心-预设"
+                ]
+    },
+    "收菜-研发中心-预设": {
+        "recognition": "TemplateMatch", 
+        "template" : "预设.png", 
+        "roi" : [219,383,889,147],
         "action": "Click",
-        "target" : [1014,452,1,1],
-       "next": ["收菜-更换队员",
-                 "收菜-驻员界面"
+        "next": [ "收菜-更换队员",
+                  "收菜-驻员界面"
                 ]
     },
     "收菜-驻员界面下滑": {

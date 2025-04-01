@@ -31,7 +31,18 @@
     "task": [
         {
             "name": "登录游戏",
-            "entry": "登录游戏"
+            "entry": "登录游戏",
+            "pipeline_override": {
+              "通用-确认获得物品": {
+                "next": ["通用-返回","通用-返回主页"]
+              },
+              "通用-返回": {
+                "next": ["登录游戏1"]
+              },
+              "通用-返回主页": {
+                "next": ["登录游戏1"]
+              }
+              }
         },
         {
             "name": "基建",
@@ -77,7 +88,6 @@
             "name": "通行证领取",
             "entry": "通行证任务列表"
         },
-        
         {
             "name": "周本",
             "entry": "周本"
@@ -159,7 +169,7 @@
                     "name": "荒墟拾遗（1-4层）",
                     "pipeline_override": {
                         "出击-选择": {
-                            "expected": "荒墟拾遗",
+                            "expected": "每日探索",
                             "next": [
                                 "每日探索-选择"
                             ]
@@ -308,8 +318,10 @@
                     "pipeline_override": {
                         "自选-次数1": {
                             "enabled": true,
-                            "next":["开启加成",
-                                   "扫荡成功"]
+                            "next": [
+                                "开启加成",
+                                "扫荡成功"
+                            ]
                         }
                     }
                 },
@@ -318,7 +330,9 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -327,11 +341,15 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -340,15 +358,21 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -357,19 +381,27 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -378,23 +410,33 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["自选-次数6"]
+                            "next": [
+                                "自选-次数6"
+                            ]
                         },
                         "自选-次数6": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -403,27 +445,39 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["自选-次数6"]
+                            "next": [
+                                "自选-次数6"
+                            ]
                         },
                         "自选-次数6": {
                             "enabled": true,
-                            "next":["自选-次数7"]
+                            "next": [
+                                "自选-次数7"
+                            ]
                         },
                         "自选-次数7": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -432,31 +486,45 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["自选-次数6"]
+                            "next": [
+                                "自选-次数6"
+                            ]
                         },
                         "自选-次数6": {
                             "enabled": true,
-                            "next":["自选-次数7"]
+                            "next": [
+                                "自选-次数7"
+                            ]
                         },
                         "自选-次数7": {
                             "enabled": true,
-                            "next":["自选-次数8"]
+                            "next": [
+                                "自选-次数8"
+                            ]
                         },
                         "自选-次数8": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -465,35 +533,51 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["自选-次数6"]
+                            "next": [
+                                "自选-次数6"
+                            ]
                         },
                         "自选-次数6": {
                             "enabled": true,
-                            "next":["自选-次数7"]
+                            "next": [
+                                "自选-次数7"
+                            ]
                         },
                         "自选-次数7": {
                             "enabled": true,
-                            "next":["自选-次数8"]
+                            "next": [
+                                "自选-次数8"
+                            ]
                         },
                         "自选-次数8": {
                             "enabled": true,
-                            "next":["自选-次数9"]
+                            "next": [
+                                "自选-次数9"
+                            ]
                         },
                         "自选-次数9": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 },
@@ -502,39 +586,57 @@
                     "pipeline_override": {
                         "自选-次数2": {
                             "enabled": true,
-                            "next":["自选-次数3"]
+                            "next": [
+                                "自选-次数3"
+                            ]
                         },
                         "自选-次数3": {
                             "enabled": true,
-                            "next":["自选-次数4"]
+                            "next": [
+                                "自选-次数4"
+                            ]
                         },
                         "自选-次数4": {
                             "enabled": true,
-                            "next":["自选-次数5"]
+                            "next": [
+                                "自选-次数5"
+                            ]
                         },
                         "自选-次数5": {
                             "enabled": true,
-                            "next":["自选-次数6"]
+                            "next": [
+                                "自选-次数6"
+                            ]
                         },
                         "自选-次数6": {
                             "enabled": true,
-                            "next":["自选-次数7"]
+                            "next": [
+                                "自选-次数7"
+                            ]
                         },
                         "自选-次数7": {
                             "enabled": true,
-                            "next":["自选-次数8"]
+                            "next": [
+                                "自选-次数8"
+                            ]
                         },
                         "自选-次数8": {
                             "enabled": true,
-                            "next":["自选-次数9"]
+                            "next": [
+                                "自选-次数9"
+                            ]
                         },
                         "自选-次数9": {
                             "enabled": true,
-                            "next":["自选-次数10"]
+                            "next": [
+                                "自选-次数10"
+                            ]
                         },
                         "自选-次数10": {
                             "enabled": true,
-                            "next":["开始战斗"]
+                            "next": [
+                                "开始战斗"
+                            ]
                         }
                     }
                 }
@@ -683,7 +785,6 @@
                     }
                 },
                 {
-                    
                     "name": "Yes",
                     "pipeline_override": {
                         "收菜-好友滑到最左1": {
@@ -707,7 +808,6 @@
                         "使用燃料界面": {
                             "enabled": true
                         }
-                    
                     }
                 },
                 {
@@ -727,5 +827,5 @@
             ]
         }
     },
-    "version": "v1.0.6"
+    "version": "v1.0.7"
 }

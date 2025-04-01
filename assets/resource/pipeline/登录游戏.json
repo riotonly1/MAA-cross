@@ -5,220 +5,158 @@
     "登录": {
         "action": "StartApp",
         "package": "com.megagame.crosscore",
-        "next": ["登录游戏1"],
-        "timeout": 30000
+        "next": ["登录游戏1"]
     },
     "登录游戏1": {
         "next": [
-            "开始游戏",
+            "等待更新",
+            "等待",
+            "服务器维护关闭游戏",
             "进入游戏",
+            "开始游戏",
             "公告-不再提示",
             "每日签到",
-            "充值-不再提示",
             "领取邮箱",
-            "登录-点击看板",
-            "等待列表"
+            "登录-点击看板"
         ],        
-        "interrupt": ["重连网络"],
-        "timeout": 30000
-    },
-    "等待列表": {
-        "next": ["等待更新",
-         "等待", 
-         "服务器维护关闭游戏", 
-         "登录游戏1"],
-        "timeout": 30000
-    },
-    "等待": {
-        "recognition": "TemplateMatch",
-        "template": "neri.png",
-        "roi": [431, 296, 411, 131],
-        "action": "DoNothing",
-        "next": ["登录游戏1"],
-        "timeout": 30000
+        "interrupt": ["重连网络"]
     },
     "等待更新": {
         "recognition": "OCR",
-        "expected": "环境",
-        "roi": [678, 653, 340, 44],
+        "expected" : ["%","环境"],
+        "roi" : [333,549,608,144],
         "action": "DoNothing",
-        "next": ["登录游戏1"],
-        "timeout": 30000
+        "next": ["等待更新1","登录游戏1"]
+    },
+    "等待更新1": {
+        "recognition": "OCR",
+        "expected" : ["%","环境"],
+        "roi" : [333,549,608,144],
+        "action": "DoNothing",
+        "next": ["等待更新","登录游戏1"]
     },
     "服务器维护关闭游戏": {
         "recognition": "OCR",
         "expected": "服务器维护中",
         "roi": [571, 310, 143, 42],
         "action": "DoNothing",
-        "next": ["检查条件-服务器维护关闭游戏"],
-        "timeout": 30000
+        "next": ["检查条件-服务器维护关闭游戏"]
     },
     "检查条件-服务器维护关闭游戏": {
         "recognition": "OCR",
         "expected": "提示",
         "roi": [283, 166, 62, 41],
         "action": "StopApp",
-        "package": "com.megagame.crosscore",
-        "timeout": 30000
+        "package": "com.megagame.crosscore"
     },
-
+    "等待": {
+        "recognition": "TemplateMatch",
+        "template": "neri.png",
+        "roi": [431, 296, 411, 131],
+        "action": "DoNothing",
+        "next": ["登录游戏1"]
+    },
     "开始游戏": {
         "recognition": "OCR",
         "expected": "开始游戏",
         "roi": [568, 458, 144, 51],
-        "action": "Click",
-        "target": [640, 481, 1, 1],
         "pre_wait_freezes": {
             "time": 1000,
+            "target" : [1160,641,50,50],
             "threshold": 0.95
         },
-        "next": ["登录游戏1"],
-        "timeout": 30000
+        "action": "Click",
+        "target": [640, 481, 1, 1],
+        "next": ["登录游戏1"]
     },
     "进入游戏": {
         "recognition": "OCR",
         "expected": "进入游戏",
         "roi": [580, 477, 118, 48],
-        "action": "Click",
         "pre_wait_freezes": {
             "time": 1000,
             "target" : [405,147,474,427],
             "threshold": 0.95
         },
-        "next": ["登录游戏1"],
-        "timeout": 30000
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
+        "next": ["登录游戏1"]
     },
     "公告-不再提示": {
         "recognition": "OCR",
-        "expected": "今天不再提示",
-        "roi": [1013, 593, 222, 70],
-        "action": "Click",
-        "next": ["关闭公告", "充值-关闭"],
-        "timeout": 30000,
-        "on_error": ["登录游戏1"]
-    },
-    "关闭公告": {
-        "recognition": "OCR",
-        "expected": "公告",
-        "roi": [50, 67, 89, 47],
-        "action": "Click",
-        "target": [1209, 94, 1, 1],
+        "expected": "不再提示",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
+        "action": "Click",
+        "next": ["关闭公告"],
+        "on_error": ["登录游戏1"]
+    },
+    "关闭公告": {
+        "recognition": "TemplateMatch",
+        "template" : "关闭公告.png",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
         "next": ["登录游戏1"],
-        "timeout": 30000,
         "on_error": ["公告-不再提示"]
     },
     "每日签到": {
         "recognition": "OCR",
         "expected": "签到",
         "roi": [1078, 559, 175, 89],
-        "action": "Click",
-        "next": ["确认获得物品-每日签到"],
-        "timeout": 30000,
-        "on_error": ["登录游戏1"]
-    },
-    "确认获得物品-每日签到": {
-        "recognition": "OCR",
-        "expected": "获得物品",
-        "roi": [490, 151, 301, 128],
-        "action": "Click",
-        "next": ["返回主页"],
-        "timeout": 30000,
-        "on_error": ["每日签到"]
-    },
-    "返回主页": {
-        "recognition": "TemplateMatch",
-        "template": "签到界面-返回主页.png",
-        "roi": [23, 18, 161, 57],
-        "action": "Click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["登录游戏1"],
-        "timeout": 30000,
-        "on_error": ["确认获得物品-每日签到"]
-    },
-    "充值-不再提示": {
-        "recognition": "OCR",
-        "expected": "今天不再提示",
-        "roi": [954, 617, 178, 40],
         "action": "Click",
-        "next": ["充值-关闭"],
-        "timeout": 30000,
+        "next": ["通用-确认获得物品"],
         "on_error": ["登录游戏1"]
-    },
-    "充值-关闭": {
-        "recognition": "OCR",
-        "expected": "前往充值",
-        "roi": [776, 503, 219, 68],
-        "action": "Click",
-        "target": [1078, 152, 1, 1],
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
-        "next": ["登录游戏1"],
-        "timeout": 30000,
-        "on_error": ["充值-不再提示"]
     },
     "登录-点击看板": {
         "recognition": "OCR",
         "expected": "出击",
         "roi": [1132, 594, 98, 56],
+        "pre_wait_freezes": {
+            "time": 3000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "target": [816, 276, 1, 1],
         "next": ["通用-啥也不做"],
-        "timeout": 30000,
         "on_error": ["登录游戏1"]
     },
-    "通用-啥也不做": {
-        "action": "DoNothing",
-        "timeout": 30000
-    },
+    
     "领取邮箱": {
         "recognition": "TemplateMatch",
         "template": "领取邮箱.png",
         "threshold": 0.9,
         "roi": [1041, 13, 73, 49],
+        "pre_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "next": ["一键领取"],
-        "timeout": 30000,
         "on_error": ["登录游戏1"]
     },
     "一键领取": {
         "recognition": "OCR",
         "expected": "一键领取",
         "roi": [232, 610, 161, 55],
-        "action": "Click",
-        "next": ["确认获得物品-邮箱"],
-        "timeout": 30000,
-        "on_error": ["领取邮箱"]
-    },
-    "确认获得物品-邮箱": {
-        "recognition": "OCR",
-        "expected": "获得物品",
-        "roi": [513, 149, 234, 90],
-        "action": "Click",
-        "next": ["邮箱-返回主界面"],
-        "timeout": 30000,
-        "on_error": ["一键领取"]
-    },
-    "邮箱-返回主界面": {
-        "recognition": "TemplateMatch",
-        "template": "返回主页.png",
-        "roi": [164, 21, 112, 51],
-        "action": "Click",
         "pre_wait_freezes": {
-            "time": 1000,
+            "time": 2000,
             "threshold": 0.95
         },
-        "next": ["登录游戏1"],
-        "timeout": 30000,
-        "on_error": ["确认获得物品-邮箱"]
+        "action": "Click",
+        "next": ["通用-确认获得物品"],
+        "on_error": ["领取邮箱"]
     }
 }
 

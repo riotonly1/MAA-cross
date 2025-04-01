@@ -33,7 +33,7 @@
     "出击-选择": {
         "recognition": "OCR",
        
-        "roi" : [221,112,868,488],
+        "roi" : [176,97,921,508],
         "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
@@ -77,34 +77,6 @@
             "threshold": 0.95
         },
         "next":["扫荡"],
-        "timeout": 30000
-    },
-    "通用-返回主页": {
-        "recognition": "TemplateMatch",
-        "template": "返回主页.png",
-        "roi": [164, 21, 112, 51],
-        "action": "Click",
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
-        "timeout": 30000
-    },
-    "通用-确认获得物品":{
-        "recognition": "OCR", 
-        "expected" : "获得物品",    
-        "roi" : [511,154,276,116],
-        "action": "Click"
-    },
-    "通用-返回":{
-        "recognition": "TemplateMatch",
-        "template" : "返回.png",
-        "roi" : [6,6,163,71],
-        "action": "Click",
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
         "timeout": 30000
     }
 }

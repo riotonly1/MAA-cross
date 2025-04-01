@@ -9,9 +9,12 @@
     "补给站-进入补给站": {
         "recognition": "OCR",           
         "expected" : "补给站", 
-        "roi" : [1018,643,93,62],            
-        "action": "Click",
-        "post_delay":1000,      
+        "roi" : [1018,643,93,62],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },         
+        "action": "Click",     
         "next": [
             "补给站-点击礼包"
         ]
@@ -19,7 +22,11 @@
     "补给站-点击礼包": {
         "recognition": "OCR",           
         "expected" : "礼包", 
-        "roi" : [428,94,52,30],            
+        "roi" : [428,94,52,30],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },            
         "action": "Click",  
         "post_delay":2000, 
         "next": [
@@ -30,7 +37,11 @@
     "补给站-购买免费礼包": {
         "recognition": "OCR",           
         "expected" : "免费", 
-        "roi" : [521,544,97,39],            
+        "roi" : [521,544,97,39],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },            
         "action": "Click",     
         "next": [
                  "补给站-购买确认"
@@ -57,6 +68,10 @@
         "recognition": "OCR", 
         "expected" : "限时",    
         "roi" : [545,86,166,51],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "next": ["补给站-采购物品清单"
                  ]
@@ -65,12 +80,17 @@
         "next": ["补给站-折扣物品10%",
                  "补给站-无折扣"
                  ],
-        "on_error":["补给站-返回主页"]         
+        "timeout":5000,
+        "on_error":["通用-返回主页"]         
     } ,
     "补给站-无折扣":{
         "recognition": "OCR", 
         "expected" : "售罄",    
         "roi" : [736,167,472,469],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "target" : [145,263,1,1],
         "next": ["补给站-限时贸易所-购买确认"
@@ -82,6 +102,10 @@
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "next": ["补给站-限时贸易所-购买确认"
                  ]
@@ -89,7 +113,11 @@
     "补给站-限时贸易所-购买确认": {
         "recognition": "OCR",           
         "expected" : "购买", 
-        "roi" : [801,523,87,59],            
+        "roi" : [801,523,87,59], 
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },           
         "action": "Click", 
         "post_delay":2000,    
         "next": [
@@ -100,15 +128,13 @@
         "recognition": "OCR", 
         "expected" : "获得物品",    
         "roi" : [513,149,234,90],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "post_delay":2000,
         "next": ["补给站-采购物品清单"
                  ]
-    } ,
-    "补给站-返回主页":{
-        "recognition": "TemplateMatch", 
-        "template" : "返回主页.png",    
-        "roi" : [174,17,95,60],   
-        "action": "Click"
     } 
 }

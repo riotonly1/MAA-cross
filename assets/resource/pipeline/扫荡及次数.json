@@ -10,8 +10,7 @@
             "threshold": 0.95
         },
         "next":["扫荡次数选择",
-                 "自选扫荡次数"],
-        "timeout": 30000
+                 "自选扫荡次数"]
     },
     "自选扫荡次数": {
         "enabled": false,
@@ -44,8 +43,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },   
     "自选-次数3": {
         "enabled": false,
@@ -57,8 +55,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     }, 
     "自选-次数4": {
         "enabled": false,
@@ -70,8 +67,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数5": {
         "enabled": false,
@@ -83,8 +79,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数6": {
         "enabled": false,
@@ -96,8 +91,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数7": {
         "enabled": false,
@@ -109,8 +103,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数8": {
         "enabled": false,
@@ -122,8 +115,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数9": {
         "enabled": false,
@@ -135,8 +127,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next_doc": "Set in code.",
-        "timeout": 30000
+        "next_doc": "Set in code."
     },
     "自选-次数10": {
         "enabled": false,
@@ -148,8 +139,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-       "next_doc": "Set in code.",
-        "timeout": 30000
+       "next_doc": "Set in code."
     }, 
     "扫荡次数选择": {
         "enabled": true,
@@ -168,8 +158,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["扫荡次数选择"],
-        "timeout": 30000
+        "next": ["扫荡次数选择"]
     },
     "检查体力-白": {
         "recognition": "ColorMatch",
@@ -182,8 +171,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["增加次数"],
-        "timeout": 30000
+        "next": ["增加次数"]
     },   
     "检查体力-红": {
         "recognition": "TemplateMatch",
@@ -194,8 +182,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["减少次数"],
-        "timeout": 30000
+        "next": ["减少次数"]
     },
     "减少次数": {
         "recognition": "TemplateMatch",
@@ -207,8 +194,7 @@
             "threshold": 0.95
         },
         "next": ["检查体力-红（次数为1）",
-                 "开始战斗"],
-        "timeout": 30000
+                 "开始战斗"]
     },
     "检查体力-红（次数为1）": {
         "recognition": "TemplateMatch",
@@ -219,8 +205,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["通用-返回主页"],
-        "timeout": 30000
+        "next": ["通用-返回主页"]
     }, 
     "使用燃料界面": {
         "enabled": false,
@@ -232,8 +217,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["使用10燃料"],
-        "timeout": 30000
+        "next": ["使用10燃料"]
     },
     "使用10燃料": {
         "recognition": "OCR",
@@ -244,8 +228,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["使用10燃料2"],
-        "timeout": 30000
+        "next": ["使用10燃料2"]
     },
     "使用10燃料2": {
         "recognition": "OCR",
@@ -256,8 +239,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["燃料补给"],
-        "timeout": 30000
+        "next": ["燃料补给"]
     },
     "燃料补给": {
         "recognition": "OCR",
@@ -268,8 +250,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["燃料返回"],
-        "timeout": 30000
+        "next": ["燃料返回"]
     },
     "燃料返回": {
         "recognition": "OCR",
@@ -281,8 +262,7 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["燃料返回2"],
-        "timeout": 30000
+        "next": ["燃料返回2"]
     },
     "燃料返回2": {
         "recognition": "OCR",
@@ -294,22 +274,20 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["开始战斗"],
-        "timeout": 30000
+        "next": ["开始战斗"]
     },
     "开始战斗": {
         "recognition": "OCR",
         "expected": "开始战斗",
         "roi" : [946,541,127,39],
-        "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
+        "action": "click",        
         "next": ["使用燃料界面",
                  "开启加成",
-                  "扫荡成功"],
-        "timeout": 30000
+                  "扫荡成功"]
     }, 
     "开启加成": {
         "recognition": "OCR",
@@ -320,39 +298,35 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["扫荡成功"],
-        "timeout": 30000
+        "next": ["扫荡成功"]
     },
     "扫荡成功": {
         "recognition": "OCR",
         "expected": "扫荡",
-        "roi" : [766,521,328,149],
-        "action": "click",
+        "roi" : [5,2,530,155],
         "pre_wait_freezes": {
             "time": 3000,
             "threshold": 0.95
         },
-        "next": ["扫荡成功-检查","扫荡结束"],
-        "timeout": 30000
+        "action": "click",
+        "next": ["扫荡成功-检查","扫荡结束"]
     },
     "扫荡成功-检查": {
         "recognition": "OCR",
         "expected": "扫荡",
-        "roi" : [766,521,328,149],
-        "action": "click",
+        "roi" : [5,2,530,155],
         "pre_wait_freezes": {
             "time": 3000,
             "threshold": 0.95
         },
-        "next": ["扫荡成功-检查","扫荡结束"],
-        "timeout": 30000
+        "action": "click",
+        "next": ["扫荡成功-检查","扫荡结束"]
     },
     "扫荡结束": {
         "recognition": "OCR",
         "expected" : "扫荡",
         "roi" : [766,521,328,149],
         "action": "DoNothing",
-        "timeout": 30000,
         "next": ["通用-返回主页"]
     }
 }
