@@ -122,20 +122,44 @@
         "next": ["军演-战斗中-等待"]    
     },
     "军演-战斗结束列表": {
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": ["军演-提升到新阶段",
         "军演-确认获得物品",
+        "军演-新的排名阶段",
          "军演-战斗列表"]        
+    },
+    "军演-新的排名阶段": {
+        "recognition": "OCR",
+        "expected": "新的",
+        "roi" : [449,155,429,138],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["军演-战斗结束列表"]        
     },
     "军演-提升到新阶段": {
         "recognition": "OCR",
         "expected": "新的阶段",
         "roi": [454, 159, 379, 79],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "click",
         "next": ["军演-战斗结束列表"]        
     },
     "军演-确认获得物品": {
         "recognition": "OCR",
         "expected": "获得物品",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "roi": [511, 154, 276, 116],
         "action": "Click",
         "next": ["军演-战斗结束列表"]        
@@ -157,6 +181,10 @@
         "action": "click",
         "pre_wait_freezes": {
             "time": 3000,
+            "threshold": 0.95
+        },
+        "post_wait_freezes": {
+            "time": 2000,
             "threshold": 0.95
         },
         "next": ["军演-战斗结束列表"]        

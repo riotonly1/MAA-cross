@@ -77,16 +77,32 @@
                  ]
     } ,
     "补给站-采购物品清单":{
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": ["补给站-折扣物品10%",
-                 "补给站-无折扣"
+                  "已购买-返回",
+                  "补给站-无折扣"
                  ],
         "timeout":5000,
         "on_error":["通用-返回主页"]         
     } ,
+    "已购买-返回":{
+        "recognition": "TemplateMatch", 
+        "template" : "售罄.png",  
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [10,145,1202,492],
+        "pre_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
+        "action": "DoNothing",
+        "next": ["通用-返回主页"
+                 ]
+    } ,
     "补给站-无折扣":{
-        "recognition": "OCR", 
-        "expected" : "售罄",    
-        "roi" : [736,167,472,469],
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95

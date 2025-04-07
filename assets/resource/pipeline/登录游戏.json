@@ -13,11 +13,7 @@
             "等待",
             "服务器维护关闭游戏",
             "进入游戏",
-            "开始游戏",
-            "公告-不再提示",
-            "每日签到",
-            "领取邮箱",
-            "登录-点击看板"
+            "开始游戏"
         ],        
         "interrupt": ["重连网络"]
     },
@@ -83,28 +79,53 @@
             "time": 2000,
             "threshold": 0.95
         },
-        "next": ["登录游戏1"]
+        "next": ["登录游戏2"]
+    },
+    "登录游戏2": {
+        "pre_wait_freezes": {
+            "time": 3000,
+            "threshold": 0.95
+        },
+        "next": [
+            "出现公告",
+            "每日签到",
+            "领取邮箱",
+            "登录-点击看板"
+        ],        
+        "interrupt": ["重连网络"]
+    },
+    "出现公告": {
+        "recognition": "TemplateMatch",
+        "roi" : [759,0,520,426],
+        "template" : "关闭公告.png",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "DoNothing",
+        "next": ["公告-不再提示"],
+        "on_error": ["登录游戏2"]
     },
     "公告-不再提示": {
         "recognition": "OCR",
         "expected": "不再提示",
+        "roi" : [798,456,481,198],
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
         "action": "Click",
         "next": ["关闭公告"],
-        "on_error": ["登录游戏1"]
+        "on_error": ["出现公告"]
     },
     "关闭公告": {
-        "recognition": "TemplateMatch",
-        "template" : "关闭公告.png",
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
         },
         "action": "Click",
-        "next": ["登录游戏1"],
+        "target":"出现公告",
+        "next": ["登录游戏2"],
         "on_error": ["公告-不再提示"]
     },
     "每日签到": {
@@ -117,7 +138,7 @@
         },
         "action": "Click",
         "next": ["通用-确认获得物品"],
-        "on_error": ["登录游戏1"]
+        "on_error": ["登录游戏2"]
     },
     "登录-点击看板": {
         "recognition": "OCR",
@@ -130,7 +151,7 @@
         "action": "Click",
         "target": [816, 276, 1, 1],
         "next": ["通用-啥也不做"],
-        "on_error": ["登录游戏1"]
+        "on_error": ["登录游戏2"]
     },
     
     "领取邮箱": {
@@ -144,7 +165,7 @@
         },
         "action": "Click",
         "next": ["一键领取"],
-        "on_error": ["登录游戏1"]
+        "on_error": ["登录游戏2"]
     },
     "一键领取": {
         "recognition": "OCR",

@@ -1,20 +1,26 @@
 {
     "活动任务列表": {
+        "pre_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
         "next": [
             "点击活动",
             "出击-重新执行"
         ]
     },
     "点击活动": {
-        "recognition": "OCR",
-        "roi" : [1044,419,235,141],
+        "recognition": "TemplateMatch", 
+        
+        "roi" : [1078,363,201,356],
         "pre_wait_freezes": {
             "time": 1000,
-            "threshold": 0.95
+            "threshold": 0.95,
+            "target" : [1124,26,44,32]
         },
         "action": "click",
                 "next": ["活动-领取门票"],
-        "on_error": ["出击任务列表"]
+        "on_error": ["活动任务列表"]
     },
     "活动-领取门票": {
         "recognition": "OCR",
@@ -25,7 +31,7 @@
         },
         "action": "click",        
         "timeout": 30000,
-        "on_error": ["出击任务列表"]
+        "on_error": ["活动任务列表"]
     },
     "活动-领取": {
         "recognition": "OCR",

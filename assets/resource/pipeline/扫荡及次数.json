@@ -143,9 +143,9 @@
     }, 
     "扫荡次数选择": {
         "enabled": true,
-        "next":[
-        "检查体力-白",
-        "检查体力-红"
+        "next":[ 
+        "检查体力-红",
+        "检查体力-白"
          ],
          "interrupt":["重连网络"]
     },    
@@ -171,8 +171,20 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["增加次数"]
+        "next": ["选择5次","增加次数"]
     },   
+    "选择5次": {
+        "recognition": "OCR",
+        "roi" : [246,491,309,51],
+        "expected" : "1",
+        "action": "Click",
+        "target" : [398,560,0,0],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["扫荡次数选择"]
+    },
     "检查体力-红": {
         "recognition": "TemplateMatch",
         "template" : "扫荡次数.png",
@@ -205,6 +217,17 @@
             "time": 1000,
             "threshold": 0.95
         },
+        "next": ["扫荡-取消界面"]
+    }, 
+    "扫荡-取消界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主页.png",
+        "roi": [164, 21, 112, 51],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
         "next": ["通用-返回主页"]
     }, 
     "使用燃料界面": {
