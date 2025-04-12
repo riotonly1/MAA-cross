@@ -17,7 +17,10 @@
         "action": "Click",     
         "next": [
             "补给站-点击礼包"
-        ]
+        ],
+        "focus":true,
+        "focus_tip":"进入补给站",
+        "focus_failed":"执行失败"
     },
     "补给站-点击礼包": {
         "recognition": "OCR",           
@@ -45,7 +48,10 @@
         "action": "Click",     
         "next": [
                  "补给站-购买确认"
-        ]
+        ],
+        "focus":true,
+        "focus_tip":"购买免费礼包",
+        "focus_failed":"执行失败"
     },
     "补给站-购买确认": {
         "recognition": "OCR",           
@@ -74,7 +80,10 @@
         },
         "action": "Click",
         "next": ["补给站-采购物品清单"
-                 ]
+                 ],
+        "focus":true,
+        "focus_tip":"进入限时贸易所",
+         "focus_failed":"执行失败"
     } ,
     "补给站-采购物品清单":{
         "pre_wait_freezes": {
@@ -82,11 +91,14 @@
             "threshold": 0.95
         },
         "next": ["补给站-折扣物品10%",
+                  "补给站-技能3",
+                  "补给站-技能2",
+                  "补给站-幻金能源",
                   "已购买-返回",
                   "补给站-无折扣"
                  ],
         "timeout":5000,
-        "on_error":["通用-返回主页"]         
+        "on_error":["通用-返回主页"]      
     } ,
     "已购买-返回":{
         "recognition": "TemplateMatch", 
@@ -110,9 +122,67 @@
         "action": "Click",
         "target" : [145,263,1,1],
         "next": ["补给站-限时贸易所-购买确认"
-                 ]
+                 ],
+        "focus":true,
+        "focus_tip":"无折扣与清单物品，购买第一个后退出",
+        "focus_failed":"执行失败"
+    } ,
+    "补给站-技能3":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "技能3.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买技能3",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-幻金能源":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "幻金能源.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买幻金能源",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-技能2":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "技能2.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买技能2",
+                 "focus_failed":"执行失败"
     } ,
     "补给站-折扣物品10%":{
+        "enabled": true,
         "recognition": "TemplateMatch", 
         "template" : "10%折扣.png",
         "threshold":0.8,  
@@ -124,7 +194,10 @@
         },
         "action": "Click",
         "next": ["补给站-限时贸易所-购买确认"
-                 ]
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买折扣物品",
+                 "focus_failed":"执行失败"
     } ,
     "补给站-限时贸易所-购买确认": {
         "recognition": "OCR",           

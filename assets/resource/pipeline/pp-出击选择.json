@@ -41,7 +41,10 @@
         },
         
         "timeout": 30000,
-        "on_error": ["出击任务列表"]
+        "on_error": ["出击任务列表"],
+        "focus":true,
+        "focus_tip":"出击选择",
+        "focus_failed":"执行失败"
     },
     "每日探索-选择": {
         "recognition": "OCR",
@@ -53,7 +56,10 @@
             "threshold": 0.95
         },
         
-        "timeout": 30000
+        "timeout": 30000,
+        "focus":true,
+        "focus_tip":"每日探索选择",
+        "focus_failed":"执行失败"
     },
     "每日探索-选择2": {
         "recognition": "OCR",

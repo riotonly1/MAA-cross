@@ -26,7 +26,10 @@
             "threshold": 0.95
         },
         "action": "click",        
-        "next": ["领取任务列表"]
+        "next": ["领取任务列表"],
+        "focus":true,
+        "focus_tip":"进入领取界面",
+        "focus_failed":"执行失败"
     },
     "领取-一键领取": {
         "recognition": "OCR",
@@ -38,7 +41,10 @@
         },
         "action": "click",
         "target" : [1157,107,1,1],        
-        "next": ["领取-一键领取-确认获得物品"]
+        "next": ["领取-一键领取-确认获得物品"],
+        "focus":true,
+        "focus_tip":"点击领取",
+        "focus_failed":"执行失败"
     },
     "领取-一键领取-确认获得物品":{
         "recognition": "OCR", 
@@ -78,7 +84,10 @@
             "threshold": 0.95
         },
         "action": "click",        
-        "next": ["通行证-任务"]
+        "next": ["通行证-任务"],
+        "focus":true,
+        "focus_tip":"领取通行证",
+        "focus_failed":"执行失败"
     },
     "通行证-任务": {
         "recognition": "OCR",

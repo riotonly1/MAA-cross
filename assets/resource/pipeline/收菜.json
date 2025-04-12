@@ -22,11 +22,18 @@
         "enabled":false,
         "recognition": "TemplateMatch", 
         "template" : "收菜.png",    
-         "roi" : [444,440,224,76] ,   
+         "roi" : [419,433,253,92] ,   
+         "pre_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        }, 
         "action": "Click",
         "next": [
             "收菜-挖矿确认"
-        ]
+        ],
+        "focus":true,
+        "focus_tip":"矿场收菜",
+        "focus_failed":"执行失败"
     },
     "收菜-挖矿确认": {
         "recognition": "OCR", 
@@ -42,8 +49,15 @@
         "recognition": "TemplateMatch", 
         "template" : "是否换班.png",    
          "roi" : [167,558,52,32],   
+         "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }, 
         "action": "Click",
-        "next": ["收菜-驻员界面"]
+        "next": ["收菜-驻员界面"],
+        "focus":true,
+        "focus_tip":"进入驻员界面",
+        "focus_failed":"执行失败"
     },
     "收菜-驻员界面": {
         "recognition": "OCR", 
@@ -176,7 +190,10 @@
          "roi" : [1083,269,94,104],   
         "action": "Click",
         "next": ["收菜-是否在自己的交易所"
-                 ]
+                 ],
+                 "focus":true,
+                 "focus_tip":"交易所",
+                 "focus_failed":"执行失败"
     } ,
     "收菜-交易所收菜": {
         "recognition": "OCR", 
@@ -205,7 +222,10 @@
         "roi" : [83,637,96,38],   
         "action": "Click",
         "next": ["收菜-好友滑到最左1",
-                 "收菜-拜访第一位"]
+                 "收菜-拜访第一位"],
+                 "focus":true,
+                 "focus_tip":"拜访好友",
+                 "focus_failed":"执行失败"
     } ,
     "收菜-好友滑到最左1": {
         "enabled":false,

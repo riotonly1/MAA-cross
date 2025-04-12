@@ -8,7 +8,10 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "action": "Click"
+        "action": "Click",
+        "focus":true,
+        "focus_tip":"返回主页",
+        "focus_failed":"执行失败"
     },
     "通用-确认获得物品":{
         "recognition": "OCR", 
@@ -31,6 +34,8 @@
         "action": "Click"
     },
     "通用-啥也不做": {
-        "action": "DoNothing"
+        "action": "DoNothing",
+        "focus":true,
+        "focus_tip":"结束任务"
     }
 }

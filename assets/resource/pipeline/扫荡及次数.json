@@ -10,7 +10,10 @@
             "threshold": 0.95
         },
         "next":["扫荡次数选择",
-                 "自选扫荡次数"]
+                 "自选扫荡次数"],
+                 "focus":true,
+                 "focus_tip":"点击扫荡",
+                 "focus_failed":"执行失败"
     },
     "自选扫荡次数": {
         "enabled": false,
@@ -154,10 +157,6 @@
         "template" : "选择次数.png",
         "roi" : [503,531,84,59],
         "action": "click",
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
         "next": ["扫荡次数选择"]
     },
     "检查体力-白": {
@@ -171,20 +170,8 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["选择5次","增加次数"]
+        "next": ["增加次数"]
     },   
-    "选择5次": {
-        "recognition": "OCR",
-        "roi" : [246,491,309,51],
-        "expected" : "1",
-        "action": "Click",
-        "target" : [398,560,0,0],
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
-        "next": ["扫荡次数选择"]
-    },
     "检查体力-红": {
         "recognition": "TemplateMatch",
         "template" : "扫荡次数.png",
@@ -199,12 +186,8 @@
     "减少次数": {
         "recognition": "TemplateMatch",
         "template" : "减少次数.png",
-        "roi" : [183,522,159,81],
+        "roi" : [204,534,93,50],
         "action": "click",
-        "pre_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
         "next": ["检查体力-红（次数为1）",
                  "开始战斗"]
     },
@@ -217,7 +200,10 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["扫荡-取消界面"]
+        "next": ["扫荡-取消界面"],
+        "focus":true,
+        "focus_tip":"体力不足",
+        "focus_failed":"执行失败"
     }, 
     "扫荡-取消界面": {
         "recognition": "TemplateMatch",
@@ -310,7 +296,10 @@
         "action": "click",        
         "next": ["使用燃料界面",
                  "开启加成",
-                  "扫荡成功"]
+                  "扫荡成功"],
+                  "focus":true,
+                  "focus_tip":"开始战斗",
+                  "focus_failed":"执行失败"
     }, 
     "开启加成": {
         "recognition": "OCR",
@@ -350,6 +339,6 @@
         "expected" : "扫荡",
         "roi" : [766,521,328,149],
         "action": "DoNothing",
-        "next": ["通用-返回主页"]
+        "next": ["扫荡"]
     }
 }

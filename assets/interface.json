@@ -64,11 +64,20 @@
         },
         {
             "name": "免费礼包+限时贸易所折扣物品",
-            "entry": "补给站"
+            "entry": "补给站",
+            "option": [
+                "购买所有折扣物品",
+                "购买-技能3",
+                "购买-技能2",
+                "购买-幻金能源"
+            ]
         },
         {
             "name": "模拟军演",
-            "entry": "模拟军演任务列表"
+            "entry": "模拟军演任务列表",
+            "option": [
+                "战力刷新选择"
+            ]
         },
         {
             "name": "每日探索",
@@ -123,6 +132,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第4层" 
                         }
                     }
                 },
@@ -146,6 +158,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第6层" 
                         }
                     }
                 },
@@ -169,6 +184,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第6层" 
                         }
                     }
                 },
@@ -192,6 +210,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第4层" 
                         }
                     }
                 },
@@ -215,6 +236,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第2层" 
                         }
                     }
                 },
@@ -238,6 +262,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第2层" 
                         }
                     }
                 },
@@ -261,6 +288,9 @@
                             "next": [
                                 "每日探索-第n层"
                             ]
+                        },
+                        "每日探索-第n层": {
+                            "expected": "第2层" 
                         }
                     }
                 }
@@ -268,6 +298,9 @@
         },
         "第几层": {
             "cases": [
+                {
+                    "name": "不选择-默认打最高"
+                },
                 {
                     "name": "第1层",
                     "pipeline_override": {
@@ -655,7 +688,7 @@
                     "name": "云端行迹",
                     "pipeline_override": {
                         "点击活动": {
-                            "template" : "云端行迹.png"
+                            "template": "云端行迹.png"
                         },
                         "活动-领取门票": {
                             "expected": "记",
@@ -801,6 +834,49 @@
                 }
             ]
         },
+        "战力刷新选择": {
+            "cases": [
+                {
+                    "name": "不选择"
+                },
+                {
+                    "name": "5000战力刷新",
+                    "pipeline_override": {
+                        "军演-战力判断刷新": {
+                            "enabled": true,
+                            "expected": "^([5-9]\\d{3}|[1-9]\\d{4})$"
+                        }
+                    }
+                },
+                {
+                    "name": "10000战力刷新",
+                    "pipeline_override": {
+                        "军演-战力判断刷新": {
+                            "enabled": true,
+                            "expected": "^[1-9]\\d{4}$"
+                        }
+                    }
+                },
+                {
+                    "name": "20000战力刷新",
+                    "pipeline_override": {
+                        "军演-战力判断刷新": {
+                            "enabled": true,
+                            "expected": "^([2-9]\\d{4})$"
+                        }
+                    }
+                },
+                {
+                    "name": "30000战力刷新",
+                    "pipeline_override": {
+                        "军演-战力判断刷新": {
+                            "enabled": true,
+                            "expected": "^([3-9]\\d{4})$"
+                        }
+                    }
+                }
+            ]
+        },
         "是否手动选择次数(开启燃料使用)": {
             "cases": [
                 {
@@ -828,6 +904,87 @@
                         },
                         "使用燃料界面": {
                             "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "购买所有折扣物品": {
+            "cases": [
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-折扣物品10%": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-折扣物品10%": {
+                            "enabled": true
+                        }
+                    }
+                }
+                
+            ]
+        },
+        "购买-技能3": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-技能3": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-技能3": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-技能2": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-技能2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-技能2": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-幻金能源": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-幻金能源": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-幻金能源": {
+                            "enabled": false
                         }
                     }
                 }

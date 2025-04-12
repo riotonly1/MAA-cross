@@ -5,7 +5,10 @@
     "登录": {
         "action": "StartApp",
         "package": "com.megagame.crosscore",
-        "next": ["登录游戏1"]
+        "next": ["登录游戏1"],
+        "focus":true,
+        "focus_tip":"启动游戏APP",
+        "focus_failed":"执行失败"
     },
     "登录游戏1": {
         "next": [
@@ -19,6 +22,7 @@
     },
     "等待更新": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected" : ["%","环境"],
         "roi" : [333,549,608,144],
         "action": "DoNothing",
@@ -26,6 +30,7 @@
     },
     "等待更新1": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected" : ["%","环境"],
         "roi" : [333,549,608,144],
         "action": "DoNothing",
@@ -33,17 +38,25 @@
     },
     "服务器维护关闭游戏": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "服务器维护中",
         "roi": [571, 310, 143, 42],
         "action": "DoNothing",
-        "next": ["检查条件-服务器维护关闭游戏"]
+        "next": ["检查条件-服务器维护关闭游戏"],
+        "focus":true,
+        "focus_tip":"服务器维护中",
+        "focus_failed":"执行失败"
     },
     "检查条件-服务器维护关闭游戏": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "提示",
         "roi": [283, 166, 62, 41],
         "action": "StopApp",
-        "package": "com.megagame.crosscore"
+        "package": "com.megagame.crosscore",
+        "focus":true,
+        "focus_toast":"服务器维护中-关闭游戏",
+        "focus_failed":"执行失败"
     },
     "等待": {
         "recognition": "TemplateMatch",
@@ -54,24 +67,29 @@
     },
     "开始游戏": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "开始游戏",
-        "roi": [568, 458, 144, 51],
+        "roi" : [578,455,128,56],
         "pre_wait_freezes": {
             "time": 1000,
-            "target" : [1160,641,50,50],
+            "target" : [1160,640,48,51],
             "threshold": 0.95
         },
         "action": "Click",
         "target": [640, 481, 1, 1],
-        "next": ["登录游戏1"]
+        "next": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"点击开始游戏",
+        "focus_failed":"执行失败"
     },
     "进入游戏": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "进入游戏",
-        "roi": [580, 477, 118, 48],
+        "roi" : [565,430,164,77],
         "pre_wait_freezes": {
             "time": 1000,
-            "target" : [405,147,474,427],
+            "target" : [422,225,445,285],
             "threshold": 0.95
         },
         "action": "Click",
@@ -79,7 +97,10 @@
             "time": 2000,
             "threshold": 0.95
         },
-        "next": ["登录游戏2"]
+        "next": ["登录游戏1"],
+        "focus":true,
+        "focus_tip":"点击进入游戏",
+        "focus_failed":"执行失败"
     },
     "登录游戏2": {
         "pre_wait_freezes": {
@@ -104,19 +125,26 @@
         },
         "action": "DoNothing",
         "next": ["公告-不再提示"],
-        "on_error": ["登录游戏2"]
+        "on_error": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"出现公告",
+        "focus_failed":"执行失败"
     },
     "公告-不再提示": {
-        "recognition": "OCR",
-        "expected": "不再提示",
-        "roi" : [798,456,481,198],
+        "recognition": "TemplateMatch",
+        "template" : "今天不再提示.png",
+        "roi" : [770,391,509,328],
         "pre_wait_freezes": {
             "time": 1000,
-            "threshold": 0.95
+            "threshold": 0.95,
+            "target" : [428,203,276,189]
         },
         "action": "Click",
         "next": ["关闭公告"],
-        "on_error": ["出现公告"]
+        "on_error": ["出现公告"],
+        "focus":true,
+        "focus_tip":"点击不再提示",
+        "focus_failed":"执行失败"
     },
     "关闭公告": {
         "pre_wait_freezes": {
@@ -126,22 +154,30 @@
         "action": "Click",
         "target":"出现公告",
         "next": ["登录游戏2"],
-        "on_error": ["公告-不再提示"]
+        "on_error": ["公告-不再提示"],
+        "focus":true,
+        "focus_tip":"关闭公告",
+        "focus_failed":"执行失败"
     },
     "每日签到": {
-        "recognition": "OCR",
-        "expected": "签到",
-        "roi": [1078, 559, 175, 89],
+        "recognition": "TemplateMatch",
+        "template" : "签到.png",
+        "roi" : [1064,538,212,149],
         "pre_wait_freezes": {
             "time": 1000,
-            "threshold": 0.95
+            "threshold": 0.95,
+            "target" : [608,410,671,309]
         },
         "action": "Click",
         "next": ["通用-确认获得物品"],
-        "on_error": ["登录游戏2"]
+        "on_error": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"每日签到",
+        "focus_failed":"执行失败"
     },
     "登录-点击看板": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "出击",
         "roi": [1132, 594, 98, 56],
         "pre_wait_freezes": {
@@ -151,7 +187,10 @@
         "action": "Click",
         "target": [816, 276, 1, 1],
         "next": ["通用-啥也不做"],
-        "on_error": ["登录游戏2"]
+        "on_error": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"点击一次看板",
+        "focus_failed":"执行失败"
     },
     
     "领取邮箱": {
@@ -165,10 +204,14 @@
         },
         "action": "Click",
         "next": ["一键领取"],
-        "on_error": ["登录游戏2"]
+        "on_error": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"进入邮箱",
+        "focus_failed":"执行失败"
     },
     "一键领取": {
         "recognition": "OCR",
+        "only_rec":true,
         "expected": "一键领取",
         "roi": [232, 610, 161, 55],
         "pre_wait_freezes": {
@@ -177,7 +220,10 @@
         },
         "action": "Click",
         "next": ["通用-确认获得物品"],
-        "on_error": ["领取邮箱"]
+        "on_error": ["领取邮箱"],
+        "focus":true,
+        "focus_tip":"一键领取",
+        "focus_failed":"执行失败"
     }
 }
 

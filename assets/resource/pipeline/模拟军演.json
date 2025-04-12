@@ -17,7 +17,10 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "next": ["模拟军演任务列表"]        
+        "next": ["模拟军演任务列表"],
+        "focus":true,
+        "focus_tip":"重新执行",
+        "focus_failed":"执行失败"        
     },
     "模拟军演-出击": {
         "recognition": "OCR",
@@ -29,8 +32,10 @@
             "threshold": 0.95
         },
         "next": ["进入模拟军演"],
-        
-        "on_error": ["模拟军演任务列表"]
+        "on_error": ["模拟军演任务列表"],
+        "focus":true,
+        "focus_tip":"出击",
+        "focus_failed":"执行失败"
     },
     "进入模拟军演": {
         "recognition": "OCR",
@@ -55,36 +60,78 @@
             "threshold": 0.95
         },
         "next": ["军演-战斗列表"],
-        
-        "on_error": ["模拟军演任务列表"]
+        "on_error": ["模拟军演任务列表"],
+        "focus":true,
+        "focus_tip":"镜像竞技场",
+        "focus_failed":"执行失败"
     },
     "军演-战斗列表": {
         "recognition": "OCR",
         "expected": "积分",
-        "roi": [75, 189, 361, 162],
+        "roi" : [353,197,79,67],
         "action": "DoNothing",
         "pre_wait_freezes": {
             "time": 1000,
+            "target" : [66,174,1154,393],
             "threshold": 0.95
         },
-        "next": ["军演-无脑挑战",
+        "next": ["军演-战力判断刷新",
+                  "军演-无脑挑战",
                   "军演-战斗结束列表"],
         
         "on_error": ["模拟军演任务列表"]
     },
+    "军演-战力判断刷新": {
+        "enabled": false,
+        "recognition": "OCR",
+        "expected": "^([5-9]\\d{3}|[1-9]\\d{4})$",
+        "roi" : [311,311,121,37],
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "target" : [66,174,1154,393],
+            "threshold": 0.95
+        },
+        "next": ["军演-刷新对手"],
+        "on_error": ["模拟军演任务列表"]
+    },
+    "军演-刷新对手": {
+        "recognition": "OCR",
+        "expected": "对手",
+        "roi" : [1053,95,202,64],
+        "action": "click",
+        "next": ["军演-战力刷新达到上限",
+                  "军演-战力判断刷新", 
+                  "军演-无脑挑战"],
+        "on_error": ["模拟军演任务列表"]
+    },
+    "军演-战力刷新达到上限": {
+        "recognition": "OCR",
+        "expected": "操作",
+        "roi" : [534,339,216,40],
+        "action": "DoNothing",
+        "next": ["军演-无脑挑战"],
+        "on_error": ["模拟军演任务列表"],
+        "focus":true,
+        "focus_tip":"无刷新次数",
+        "focus_failed":"执行失败"
+    },
     "军演-无脑挑战": {
         "recognition": "OCR",
         "expected": "积分",
-        "roi": [75, 189, 361, 162],
+        "roi" : [344,198,84,65],
         "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
+            "target" : [66,174,1154,393],
             "threshold": 0.95
         },
         "next": ["军演-无脑挑战1", 
         "军演-无挑战次数"],
-        
-        "on_error": ["模拟军演任务列表"]
+        "on_error": ["模拟军演任务列表"],
+        "focus":true,
+        "focus_tip":"挑战对手",
+        "focus_failed":"执行失败"
     },
     "军演-无挑战次数": {
         "recognition": "OCR",

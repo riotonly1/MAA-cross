@@ -2,7 +2,8 @@
     "活动任务列表": {
         "pre_wait_freezes": {
             "time": 2000,
-            "threshold": 0.95
+            "threshold": 0.95,
+            "target" : [1114,466,140,51]
         },
         "next": [
             "点击活动",
@@ -20,7 +21,10 @@
         },
         "action": "click",
                 "next": ["活动-领取门票"],
-        "on_error": ["活动任务列表"]
+        "on_error": ["活动任务列表"],
+        "focus":true,
+        "focus_tip":"点击活动",
+        "focus_failed":"执行失败"
     },
     "活动-领取门票": {
         "recognition": "OCR",
@@ -31,7 +35,10 @@
         },
         "action": "click",        
         "timeout": 30000,
-        "on_error": ["活动任务列表"]
+        "on_error": ["活动任务列表"],
+        "focus":true,
+        "focus_tip":"领取门票",
+        "focus_failed":"执行失败"
     },
     "活动-领取": {
         "recognition": "OCR",
@@ -60,7 +67,10 @@
             "time": 1000,
             "threshold": 0.95
         },
-        "action": "click"
+        "action": "click",
+        "focus":true,
+        "focus_tip":"选择模式",
+        "focus_failed":"执行失败"
     }, 
     "活动-滑动选择关卡": {   
         "pre_wait_freezes": {
@@ -79,6 +89,9 @@
             "threshold": 0.95
         },
         "roi" : [464,471,784,248],
-        "action": "click"
+        "action": "click",
+        "focus":true,
+        "focus_tip":"进入关卡",
+        "focus_failed":"执行失败"
     }
 }
