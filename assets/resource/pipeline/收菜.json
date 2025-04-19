@@ -119,7 +119,7 @@
     "收菜-挖掘矿场-预设": {
         "recognition": "TemplateMatch", 
         "template" : "预设.png", 
-        "roi" : [232,418,839,115],
+        "roi" : [237,280,840,125],
         "action": "Click",
         "next": [ "收菜-更换队员",
                   "收菜-驻员界面"

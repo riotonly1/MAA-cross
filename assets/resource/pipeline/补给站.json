@@ -94,6 +94,12 @@
                   "补给站-技能3",
                   "补给站-技能2",
                   "补给站-幻金能源",
+                  "补给站-初级硅化剂",
+                  "补给站-进化之息",
+                  "补给站-涅槃凝胶",
+                  "补给站-亚金电池",
+                  "补给站-荧晶单元",
+                  "补给站-荧晶精华瓶",
                   "已购买-返回",
                   "补给站-无折扣"
                  ],
@@ -102,7 +108,7 @@
     } ,
     "已购买-返回":{
         "recognition": "TemplateMatch", 
-        "template" : "售罄.png",  
+        "template" : "补给站清单/售罄.png",  
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [10,145,1202,492],
@@ -130,7 +136,7 @@
     "补给站-技能3":{
         "enabled": false,
         "recognition": "TemplateMatch", 
-        "template" : "技能3.png",
+        "template" : "补给站清单/技能3.png",
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [34,169,1188,475],   
@@ -148,7 +154,7 @@
     "补给站-幻金能源":{
         "enabled": false,
         "recognition": "TemplateMatch", 
-        "template" : "幻金能源.png",
+        "template" : "补给站清单/幻金能源.png",
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [34,169,1188,475],   
@@ -166,7 +172,7 @@
     "补给站-技能2":{
         "enabled": false,
         "recognition": "TemplateMatch", 
-        "template" : "技能2.png",
+        "template" : "补给站清单/技能2.png",
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [34,169,1188,475],   
@@ -181,10 +187,118 @@
                  "focus_tip":"购买技能2",
                  "focus_failed":"执行失败"
     } ,
+    "补给站-初级硅化剂":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/初级硅化剂.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买初级硅化剂",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-进化之息":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/进化之息.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买进化之息",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-涅槃凝胶":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/涅槃凝胶.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买涅槃凝胶",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-亚金电池":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/亚金电池.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买亚金电池",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-荧晶单元":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/荧晶单元.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买荧晶单元",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-荧晶精华瓶":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/荧晶精华瓶.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买荧晶精华瓶",
+                 "focus_failed":"执行失败"
+    } ,
     "补给站-折扣物品10%":{
         "enabled": true,
         "recognition": "TemplateMatch", 
-        "template" : "10%折扣.png",
+        "template" : "补给站清单/10%折扣.png",
         "threshold":0.8,  
         "green_mask":true, 
         "roi" : [34,169,1188,475],   

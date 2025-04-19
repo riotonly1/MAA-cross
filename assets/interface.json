@@ -69,7 +69,13 @@
                 "购买所有折扣物品",
                 "购买-技能3",
                 "购买-技能2",
-                "购买-幻金能源"
+                "购买-幻金能源",
+                "购买-初级硅化剂",
+                "购买-进化之息",
+                "购买-涅槃凝胶",
+                "购买-亚金电池",
+                "购买-荧晶单元",
+                "购买-荧晶精华瓶"
             ]
         },
         {
@@ -134,7 +140,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第4层" 
+                            "expected": "第4层"
                         }
                     }
                 },
@@ -160,7 +166,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第6层" 
+                            "expected": "第6层"
                         }
                     }
                 },
@@ -186,7 +192,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第6层" 
+                            "expected": "第6层"
                         }
                     }
                 },
@@ -212,7 +218,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第4层" 
+                            "expected": "第4层"
                         }
                     }
                 },
@@ -238,7 +244,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第2层" 
+                            "expected": "第2层"
                         }
                     }
                 },
@@ -264,7 +270,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第2层" 
+                            "expected": "第2层"
                         }
                     }
                 },
@@ -290,7 +296,7 @@
                             ]
                         },
                         "每日探索-第n层": {
-                            "expected": "第2层" 
+                            "expected": "第2层"
                         }
                     }
                 }
@@ -927,7 +933,6 @@
                         }
                     }
                 }
-                
             ]
         },
         "购买-技能3": {
@@ -989,7 +994,127 @@
                     }
                 }
             ]
+        },
+        "购买-初级硅化剂": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-初级硅化剂": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-初级硅化剂": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-进化之息": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-进化之息": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-进化之息": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-涅槃凝胶": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-涅槃凝胶": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-涅槃凝胶": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-亚金电池": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-亚金电池": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-亚金电池": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-荧晶单元": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-荧晶单元": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-荧晶单元": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "购买-荧晶精华瓶": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "补给站-荧晶精华瓶": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "补给站-荧晶精华瓶": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
         }
     },
-    "version": "v1.0.9"
+    "version": "v1.1.0"
 }
