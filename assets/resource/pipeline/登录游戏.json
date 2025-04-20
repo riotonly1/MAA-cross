@@ -148,7 +148,7 @@
     },
     "关闭公告": {
         "pre_wait_freezes": {
-            "time": 1000,
+            "time": 2000,
             "threshold": 0.95
         },
         "action": "Click",
