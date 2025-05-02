@@ -98,6 +98,7 @@
                   "补给站-进化之息",
                   "补给站-涅槃凝胶",
                   "补给站-亚金电池",
+                  "补给站-亚金组件",
                   "补给站-荧晶单元",
                   "补给站-荧晶精华瓶",
                   "已购买-返回",
@@ -257,6 +258,24 @@
                  ],
                  "focus":true,
                  "focus_tip":"购买亚金电池",
+                 "focus_failed":"执行失败"
+    } ,
+    "补给站-亚金组件":{
+        "enabled": false,
+        "recognition": "TemplateMatch", 
+        "template" : "补给站清单/亚金组件.png",
+        "threshold":0.8,  
+        "green_mask":true, 
+        "roi" : [34,169,1188,475],   
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click",
+        "next": ["补给站-限时贸易所-购买确认"
+                 ],
+                 "focus":true,
+                 "focus_tip":"购买亚金组件",
                  "focus_failed":"执行失败"
     } ,
     "补给站-荧晶单元":{

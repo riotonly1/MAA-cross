@@ -68,7 +68,7 @@
     "军演-战斗列表": {
         "recognition": "OCR",
         "expected": "积分",
-        "roi" : [353,197,79,67],
+        "roi" : [1119,143,61,34],
         "action": "DoNothing",
         "pre_wait_freezes": {
             "time": 1000,
@@ -85,7 +85,7 @@
         "enabled": false,
         "recognition": "OCR",
         "expected": "^([5-9]\\d{3}|[1-9]\\d{4})$",
-        "roi" : [311,311,121,37],
+        "roi" : [979,143,127,30],
         "action": "DoNothing",
         "pre_wait_freezes": {
             "time": 1000,
@@ -96,9 +96,9 @@
         "on_error": ["模拟军演任务列表"]
     },
     "军演-刷新对手": {
-        "recognition": "OCR",
-        "expected": "对手",
-        "roi" : [1053,95,202,64],
+        "recognition": "TemplateMatch",
+        "template" : "刷新.png",
+        "roi" : [1171,77,104,69],
         "action": "click",
         "next": ["军演-战力刷新达到上限",
                   "军演-战力判断刷新", 
@@ -108,7 +108,7 @@
     "军演-战力刷新达到上限": {
         "recognition": "OCR",
         "expected": "操作",
-        "roi" : [534,339,216,40],
+        "roi" : [514,334,136,39],
         "action": "DoNothing",
         "next": ["军演-无脑挑战"],
         "on_error": ["模拟军演任务列表"],
@@ -119,7 +119,7 @@
     "军演-无脑挑战": {
         "recognition": "OCR",
         "expected": "积分",
-        "roi" : [344,198,84,65],
+        "roi" : [1119,143,61,34],
         "action": "click",
         "pre_wait_freezes": {
             "time": 1000,
@@ -160,7 +160,7 @@
     "军演-无脑挑战1": {
         "recognition": "OCR",
         "expected": "挑战",
-        "roi": [720, 617, 65, 44],
+        "roi" : [746,620,113,59],
         "action": "click",
         "pre_wait_freezes": {
             "time": 1000,

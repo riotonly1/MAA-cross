@@ -172,6 +172,10 @@
         "recognition": "OCR", 
         "expected" : "使用",    
         "roi" : [861,223,192,319],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }, 
         "action": "Click",
         "next":["收菜-驻员界面"]
            },

@@ -108,6 +108,7 @@
             "threshold": 0.95
         },
         "next": [
+            "每日签到-活动",
             "出现公告",
             "每日签到",
             "领取邮箱",
@@ -117,7 +118,7 @@
     },
     "出现公告": {
         "recognition": "TemplateMatch",
-        "roi" : [759,0,520,426],
+        "roi" : [582,7,697,712],
         "template" : "关闭公告.png",
         "pre_wait_freezes": {
             "time": 1000,
@@ -133,7 +134,7 @@
     "公告-不再提示": {
         "recognition": "TemplateMatch",
         "template" : "今天不再提示.png",
-        "roi" : [770,391,509,328],
+        "roi" : [582,7,697,712],
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95,
@@ -157,6 +158,22 @@
         "on_error": ["公告-不再提示"],
         "focus":true,
         "focus_tip":"关闭公告",
+        "focus_failed":"执行失败"
+    },
+    "每日签到-活动": {
+        "recognition": "OCR",
+        "expected": "赠物",
+        "roi" : [56,138,115,64],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95,
+            "target" : [608,410,671,309]
+        },
+        "action": "Click",
+        "next": ["通用-确认获得物品"],
+        "on_error": ["登录游戏2"],
+        "focus":true,
+        "focus_tip":"每日签到-活动",
         "focus_failed":"执行失败"
     },
     "每日签到": {
@@ -197,7 +214,7 @@
         "recognition": "TemplateMatch",
         "template": "领取邮箱.png",
         "threshold": 0.9,
-        "roi": [1041, 13, 73, 49],
+        "roi" : [1051,6,65,52],
         "pre_wait_freezes": {
             "time": 2000,
             "threshold": 0.95
@@ -213,7 +230,7 @@
         "recognition": "OCR",
         "only_rec":true,
         "expected": "一键领取",
-        "roi": [232, 610, 161, 55],
+        "roi" : [242,620,119,40],
         "pre_wait_freezes": {
             "time": 2000,
             "threshold": 0.95
