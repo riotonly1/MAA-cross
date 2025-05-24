@@ -52,7 +52,8 @@
         "action": "click",
         "post_delay":2000,      
         "next": [
-            "周本-阿瑞斯"
+            "周本-阿瑞斯",
+            "周本-宙斯"
         ]
     },
     "周本-返回主界面":{
@@ -63,12 +64,30 @@
 
     } ,
     "周本-阿瑞斯": {
+        "enabled": false,
         "next": [
             "周本-已满",
             "周本-防卡点击"
         ]
-
     },
+    "周本-宙斯": {
+        "enabled": false,
+        "next": [
+            "周本-宙斯-向下滑动",
+            "周本-已满",
+            "周本-防卡点击"
+        ]
+    },
+    "周本-宙斯-向下滑动": {
+        "recognition": "OCR", 
+        "expected" : "斯",    
+        "roi" : [671,166,146,115],   
+        "action": "Swipe",
+        "begin" : [577,573,1,1],
+        "end" : [579,175,1,1],
+        "post_delay":2000,
+        "next":["周本-宙斯"]
+    },  
     "周本-已满": {
         "recognition": "OCR",           
         "expected" : "600", 
@@ -80,9 +99,9 @@
         ]
     },
     "周本-防卡点击": {
-        "recognition": "TemplateMatch", 
-        "template" : "周本-防卡.png",    
-        "roi" : [661,259,156,108],   
+        "recognition": "OCR",           
+        "expected": "波塞冬",    
+        "roi" : [656,132,171,527],   
         "action": "Click",
         "post_delay":1000,      
         "next": [
@@ -90,9 +109,9 @@
         ]
     },
     "周本-防卡点击2": {
-        "recognition": "TemplateMatch", 
-        "template" : "周本-防卡.png",    
-        "roi" : [671,131,152,115],   
+        "recognition": "OCR",           
+        "expected": "阿瑞斯",    
+        "roi" : [656,132,171,527],  
         "action": "Click",
         "post_delay":1000,      
         "next": [
@@ -150,92 +169,191 @@
         "action": "click",
         "post_delay":1000,      
         "next": [
-            "周本-戈里刻战斗"
+            "周本-阿瑞斯战斗"
         ]
     },
-    "周本-戈里刻战斗": {
+    "周本-宙斯战斗": {
+        "pre_wait_freezes":1000,
+        "next": [
+            "周本-宙斯战斗1",
+            "周本-宙斯战斗2",
+            "周本-宙斯战斗3",
+            "周本-宙斯战斗4",
+            "周本-宙斯战斗5" 
+        ]
+    },
+    "周本-宙斯战斗1":{
+        "recognition": "OCR", 
+        "expected" : "0",    
+       "roi" : [1178,25,61,31],
+        "action": "Click",
+        "target" : [564,584,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-宙斯战斗"]
+    } ,
+    "周本-宙斯战斗2":{
+        "recognition": "OCR", 
+        "expected" : "1",    
+       "roi" : [1182,22,29,33],
+        "action": "Click",
+        "target" : [402,426,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-宙斯战斗"]
+    } ,
+    "周本-宙斯战斗3":{
+        "recognition": "OCR", 
+        "expected" : "2",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [326,272,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-宙斯战斗"]
+    } ,
+    "周本-宙斯战斗4":{
+        "recognition": "OCR", 
+        "expected" : "3",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [518,304,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-宙斯战斗"]
+    } ,
+    "周本-宙斯战斗5":{
+        "recognition": "OCR", 
+        "expected" : "4",    
+       "roi" : [1182,22,29,33],
+       "pre_delay":1000,
+        "action": "Click",
+        "target" : [690,211,1,1],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-跳过boss动画"],
+        "interrupt":[ "周本-等待"]
+    } ,
+    "周本-阿瑞斯战斗": {
         "pre_wait_freezes":2000,
         "next": [
-            "周本-戈里刻战斗1",
-            "周本-戈里刻战斗2",
-            "周本-戈里刻战斗3",
-            "周本-戈里刻战斗4",
-            "周本-戈里刻战斗5",
-            "周本-戈里刻战斗6",
-            "周本-戈里刻战斗7"   
+            "周本-阿瑞斯战斗1",
+            "周本-阿瑞斯战斗2",
+            "周本-阿瑞斯战斗3",
+            "周本-阿瑞斯战斗4",
+            "周本-阿瑞斯战斗5",
+            "周本-阿瑞斯战斗6",
+            "周本-阿瑞斯战斗7"   
         ]
     },
-    "周本-戈里刻战斗1":{
+    "周本-阿瑞斯战斗1":{
         "recognition": "OCR", 
         "expected" : "0",    
        "roi" : [1178,25,61,31],
         "action": "Click",
         "target" : [563,363,1,1],
-        "post_delay":2000,
-        "next": ["周本-戈里刻战斗"]
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-阿瑞斯战斗"]
     } ,
-    "周本-戈里刻战斗2":{
+    "周本-阿瑞斯战斗2":{
         "recognition": "OCR", 
         "expected" : "1",    
        "roi" : [1182,22,29,33],
         "action": "Click",
         "target" : [517,267,1,1],
-        "post_delay":2000,
-        "next": ["周本-戈里刻战斗"]
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-阿瑞斯战斗"]
     } ,
-    "周本-戈里刻战斗3":{
+    "周本-阿瑞斯战斗3":{
         "recognition": "OCR", 
         "expected" : "2",    
        "roi" : [1182,22,29,33],
        "pre_delay":1000,
         "action": "Click",
         "target" : [446,325,1,1],
-        "post_delay":2000,
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": ["周本-战斗结束",
                  "周本-战斗中-等待"]
     } ,
-    "周本-戈里刻战斗4":{
+    "周本-阿瑞斯战斗4":{
         "recognition": "OCR", 
         "expected" : "3",    
        "roi" : [1182,22,29,33],
        "pre_delay":1000,
         "action": "Click",
         "target" : [469,206,1,1],
-        "post_delay":2000,
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": ["周本-战斗结束",
                  "周本-战斗中-等待"]
     } ,
-    "周本-戈里刻战斗5":{
+    "周本-阿瑞斯战斗5":{
         "recognition": "OCR", 
         "expected" : "4",    
        "roi" : [1182,22,29,33],
        "pre_delay":1000,
         "action": "Click",
         "target" : [425,401,1,1],
-        "post_delay":2000,
-        "next": ["周本-戈里刻战斗"]
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-阿瑞斯战斗"]
     } ,
-    "周本-戈里刻战斗6":{
+    "周本-阿瑞斯战斗6":{
         "recognition": "OCR", 
         "expected" : "5",    
        "roi" : [1182,22,29,33],
        "pre_delay":1000,
         "action": "Click",
         "target" : [479,194,1,1],
-        "post_delay":2000,
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": ["周本-战斗结束",
                  "周本-战斗中-等待"]
     } ,
-    "周本-戈里刻战斗7":{
+    "周本-阿瑞斯战斗7":{
         "recognition": "OCR", 
         "expected" : "6",    
        "roi" : [1182,22,29,33],
        "pre_delay":1000,
         "action": "Click",
         "target" : [612,198,1,1],
-        "post_delay":2000,
-        "next": ["周本-跳过boss动画"]
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": ["周本-跳过boss动画"],
+        "interrupt":[ "周本-等待"]
     } ,
+    "周本-等待": {
+        "action": "DoNothing"
+           },
     "周本-跳过boss动画":{
         "recognition": "OCR", 
         "expected" : "跳过",    
@@ -281,6 +399,6 @@
         "pre_delay":3000,      
         "action": "click",
         "post_delay":3000,      
-        "next": ["周本-戈里刻战斗"]
+        "next": ["周本-阿瑞斯战斗"]
     }
 }

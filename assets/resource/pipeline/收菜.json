@@ -87,9 +87,9 @@
         "template" : "预设.png", 
         "roi" : [232,142,849,122],
         "action": "Click",
-        "next": [ "收菜-更换队员",
-                  "收菜-驻员界面"
-                ]
+        "next": [ "收菜-更换队员"
+                ],
+        "interrupt":[ "收菜-等待"]        
     },
     "收菜-发电站": {
         "recognition": "TemplateMatch",
@@ -104,9 +104,9 @@
         "template" : "预设.png", 
         "roi" : [237,280,840,125],
         "action": "Click",
-        "next": [ "收菜-更换队员",
-                  "收菜-驻员界面"
-                ]
+        "next": [ "收菜-更换队员"
+                ],
+        "interrupt":[ "收菜-等待"]
     },
     "收菜-挖掘矿场": {
         "recognition": "TemplateMatch",
@@ -121,9 +121,9 @@
         "template" : "预设.png", 
         "roi" : [218,404,863,148],
         "action": "Click",
-        "next": [ "收菜-更换队员",
-                  "收菜-驻员界面"
-                ]
+       "next": [ "收菜-更换队员"
+                ],
+        "interrupt":[ "收菜-等待"]
     },
     "收菜-原料交易所": {
         "recognition": "TemplateMatch",
@@ -138,9 +138,9 @@
         "template" : "预设.png", 
         "roi" : [231,128,865,138],
         "action": "Click",
-        "next": [ "收菜-更换队员",
-                  "收菜-驻员界面"
-                ]
+        "next": [ "收菜-更换队员"
+                ],
+        "interrupt":[ "收菜-等待"]
     },
     "收菜-研发中心": {
         "recognition": "TemplateMatch",
@@ -155,9 +155,9 @@
         "template" : "预设.png", 
         "roi" : [219,383,889,147],
         "action": "Click",
-        "next": [ "收菜-更换队员",
-                  "收菜-驻员界面"
-                ]
+        "next": [ "收菜-更换队员"
+                ],
+        "interrupt":[ "收菜-等待"]
     },
     "收菜-驻员界面下滑": {
         "recognition": "OCR", 
@@ -167,13 +167,16 @@
         "begin" : [499,586,1,1],
         "end" : [498,210,1,1],
         "next":["收菜-驻员界面"]
-           },    
+           },   
+    "收菜-等待": {
+        "action": "DoNothing"
+           },
     "收菜-更换队员": {
         "recognition": "OCR", 
         "expected" : "使用",    
         "roi" : [861,223,192,319],
         "pre_wait_freezes": {
-            "time": 1000,
+            "time": 3000,
             "threshold": 0.95
         }, 
         "action": "Click",
